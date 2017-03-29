@@ -1,0 +1,49 @@
+﻿/* SLIDER */
+#slider{ 
+    width:1000px;
+	color: black;
+	height: 170px;
+	margin: 0 auto;
+	margin: 0 20px 20px 20px;
+	z-index: 2;
+    text-align:center;
+}
+/* Imágenes del slider */
+#slider>div#contenidoSl {
+	height: 170px;
+	transition: 0.7s;
+	transform-style: preserve-3d;
+	width: 1000px;
+}
+#banner1, #banner2, #banner3, #banner4 {
+	/*background-color: #f2f2f2;*/
+	height: 150px; /* Se resta el padding */
+	opacity: 0;
+	overflow: hidden;
+	padding: 0px;
+	position: absolute;
+	transition: 1s;
+	width: 980px;  /* Se resta el padding */
+}
+#banner1 h2, #banner2 h2, #banner3 h2, #banner4 h2{
+	text-align: center;
+	font-size: 100px;
+	color:#000;
+	padding:0;
+	margin:0;
+	font-family: 'Gloria Hallelujah';
+}
+#banner1 {
+	color: #6d2025;
+	font-family: Consolas, monospace;
+	transform: translateZ(500px);
+}
+#banner2 {
+	transform: rotateY(90deg) translateZ(500px);
+}
+#banner3 {
+	transform: rotateY(180deg) translateZ(500px);
+}
+#banner4 {
+	transform: rotateY(270deg) translateZ(500px);
+}

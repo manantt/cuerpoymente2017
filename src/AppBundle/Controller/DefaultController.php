@@ -31,7 +31,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 		$categorias = $em->getRepository('AppBundle:Categoria')->findBy(array('idPadre' => NULL));
 		
-		return $this->render('index.html.twig', array('categorias' => $categorias,
+		return $this->render('base.html.twig', array('categorias' => $categorias,
 			'visitas' => $this->get('miservicio.contadorvisitas')->getVisitas()));
     }
     /**
@@ -91,7 +91,7 @@ class DefaultController extends Controller
 		));
     }
 	/**
-	* @Route("/logout", name="usuario_logout")
+	* @Route("/logdout", name="usuario_logout")
 	*/
 	public function logoutAction()
 	{

@@ -1,0 +1,95 @@
+﻿/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+    background-color: #f2f2f2;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/**/
+#registroPopUp form{
+	width:370px;
+	font-size:21px;
+    margin: auto;
+    padding:20px;
+}
+#registroPopUp form label{
+	float:left;
+	width:150px;
+	color:#b984cE;
+	padding: 5px;
+}
+#registroPopUp form input{
+	float:left;
+	margin: 2px 0;
+	border:none;
+	padding:5px;
+}
+#registroPopUp form input[type="text"], #registroPopUp form input[type="password"], #registroPopUp form input[type="email"]{
+	width:180px;
+	padding:3px 10px;
+	font-size:21px;
+	outline: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/*background-color:#600661;*/
+	border:none;
+	color:#b984cE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#registroPopUp form input[type="submit"]{
+	float: none;
+	box-shadow: 0px 0px 1px 1px #b984cE;
+	margin: 20px auto 0 50px;
+	border:none;
+	background: linear-gradient(to top,  rgba(86, 3, 87, 1) 0%,rgba(128, 22, 129, 1) 50%,rgba(86, 3, 87, 1) 100%); /* Chrome10+,Safari5.1+ */
+	-webkit-border-radius: 28;
+  	-moz-border-radius: 28;
+  	border-radius: 28px;
+  	text-shadow: 2px 2px 10px #111;
+  	color: #f2f2f2;
+  	font-size: 30px;
+  	padding: 13px 40px 13px 40px;
+  	width: 240px;
+
+}#registroPopUp form input[type="submit"]:hover{
+	color: white;
+	box-shadow: 0px 0px 2px 2px #b984cE;
+	background: linear-gradient(to top,  rgba(86, 3, 87, 1) 0%, rgba(154, 39, 155, 1) 35%, rgba(154, 39, 155, 1) 65%, rgba(86, 3, 87, 1) 100%);
+	text-decoration: none;
+}
+#registroPopUp .error{
+	margin-left: 10px;
+	color:red;
+	font-size:14px;
+	width:auto;
+}

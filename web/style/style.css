@@ -1,98 +1,152 @@
+﻿@font-face {
+    font-family: 'Gloria Hallelujah';
+    src: url("../font/GloriaHallelujah.ttf");
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../font/OpenSans-Regular.ttf");
+}
+html{
+    height:100% !important;
+}
 /* reset */
 *{
-	margin:0;padding:0;
-	font-family:Arial;
+	margin:0;padding:0;border:0;font-family: 'Open Sans', sans-serif;color: #141823;
 }
-html, body{
-	height:100%;
+/**/
+.clear{
+    clear:both;
 }
-/* header */
-header{
-	background-color:black;
+.contenedor{
+	background-color:#f2f2f2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	margin: 5px;
 }
-header h1{
-	margin-left:25%;
-	padding:20px 0;
-	color:white;
-	
-}
-/* navigation */
-nav{
-	background-color:black;
-	border:2px solid white;
-}
-nav ul{
-	text-align:right;
-}
-nav ul li{
-	display:inline;
-} 
-nav ul li a{
-	text-decoration:none;
-	color:white;
-	padding:0 5px;
-}
-/* main */
-main{
-	height:100%;
-}
-main #menuCat{
-	width:300px;
-	background-color:black;
-	color:white;
-	display:inline-block;
-}
-main #menuCat h2{
-	padding:10px;
-}
-main #menuCat ul li a{
-	color:white;
-	text-decoration:none;
-	padding-left:30px;
-}
-main #menuCat ul li a:hover{
-	color:#aaa;
-	text-decoration:underline;
-}
-main #vista{
-	height:100%;
-	display:inline-block;
-	width:75%;
-	padding:30px;
-	float:right;
-	box-sizing: border-box;
-}
-main #vista a{
-	color:black;
-	text-decoration: none;
-}
-main #vista .boton{
-	padding:5px;
-	text-decoration:none;
-	background-color:black;
-	color:white;
-	margin:20px;
-}
-main #vista .boton:hover{
-	background-color:#555;
-}
-main #vista table{
-	margin:20px;
-}
-main #vista table td{
-	min-width:150px;
-	padding:2px;
-}
-main #tablaEdicion{
-	display:none;
-}
-main .disabled{
-	display:none;
-}
-.error{
+h1{
+	color: #560357;
 	text-align: center;
-	color:red;
+	margin-bottom: 10px;
 }
-.hide{
-	display:none;
+/***/
+body{
+	background-color: #ddd;
+	margin:0;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-rows: 170px auto 100px;
+	height: 100%;
+}
+header {
+	grid-row: 1 / 2;
+}
+#logo{
+	z-index: 2;
+}
+/* usuario */
+#login{
+	width: 300px;
+	height:100px;
+	margin: 0px 30px;
+	display: inline-block;
+	position: relative;
+	top:25px;
+}
+#login form{
+	width: 300px;
+	height:150px;
+	position: absolute;
+	background-image:url("../svg/acceso.svg");
+}
+@-webkit-keyframes balanceo {/* animación de balanceo*/
+  20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+}
+#login form:hover{
+	background-image:url("../svg/accesohover.svg");
+	-webkit-animation: 2s balanceo 1;
+}
+#login input[type="submit"]{
+	width:70px;
+	height:70px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	cursor:pointer;
+	position:relative;
+	top:-78px;
+	left:227px;
+	opacity:0;
+}
+#login input[type="text"], #login input[type="password"]{
+	width:180px;
+	padding:3px 8px;
+	margin:6px;
+	margin-left:25px;
+	font-size:19px;
+	outline: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color:#600661;
+	border:none;
+	color:#b984cE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#login input[type="text"]{
+	margin-top:40px;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #b984cE;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #b984cE;
+   opacity:  1;
+}
+/* FOOTER */
+footer {
+	grid-row: 3;
+	background-color:#560357;
+	box-shadow:0px 0px 1px 1px #222;
+	text-align:center;
+	background-image:url("../svg/bg2.svg");
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+footer section{
+    width:200px;
+    margin: 0 10px;
+    height:75px;
+    background-color:#600661;
+    color:#b984cE;
+	padding:5px;
+	font-size:12px;
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow:0px 0px 1px 1px #600661;
+}
+footer h2{
+    margin:0;
+	padding:0;
+	text-align:center;
+    color: #b984cE;
+}
+footer img{
+	position:relative;
+	top:3px;
+	width:20px;
 }
