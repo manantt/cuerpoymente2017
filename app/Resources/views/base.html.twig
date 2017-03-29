@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es-es">
 <head>
-    <title>Pruebas</title>
+    <title>{% block titulo %}CyM{% endblock %}</title>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="favicon.ico" />
 
@@ -12,8 +12,12 @@
     <link href="{{ asset('style/registro.css')}}" rel="stylesheet" type="text/css" />
 
     <script src="{{ asset('scripts/jquery-2.1.3.min.js')}}"></script>
+    <script src="{{ asset('scripts/three.min.js')}}"></script>
+    <script src="{{ asset('scripts/CanvasRenderer.js')}}"></script>
+    <script src="{{ asset('scripts/Projector.js')}}"></script>
     <script src="{{ asset('scripts/miSlider.js')}}"></script>
     <script src="{{ asset('scripts/registroPopUp.js')}}"></script>
+    <script src="{{ asset('scripts/cora3d.js')}}"></script>
     {% block scripts %}{% endblock %}
 </head>
 <body>
@@ -22,8 +26,8 @@
         <!-- Registro contenido -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form name="registroForm" method="post" action="/register" enctype="application/x-www-form-urlencoded">
-                <h1>Crea tu cuenta</h1><br>
+            <!--<form name="registroForm" method="post" action="/register" enctype="application/x-www-form-urlencoded">
+                
                 <label for="nombreU">Nombre</label>
                 <input type="text" name="sonata_user_registration_form[username]" id="nombreU" value="" required />
                 <br /><br />
@@ -37,7 +41,21 @@
                 <input type="password" name="sonata_user_registration_form[plainPassword][second]" id="rep" value="" required />
                 <br /><br />
                 <input class="enviar" type="submit" name="enviarRegistro" value="Enviar" />
-            </form>
+            </form>-->
+
+            <form action="/register/"  method="POST" class="fos_user_registration_register form-horizontal">
+				<h1>Crea tu cuenta</h1><br>
+				<div id="sonata_user_registration_form">
+					<div><label for="sonata_user_registration_form_username" class="required">Nombre</label><input type="text" id="sonata_user_registration_form_username" name="sonata_user_registration_form[username]" required="required" maxlength="255" pattern=".{2,}" /></div>
+					<div><label for="sonata_user_registration_form_email" class="required">Email</label><input type="email" id="sonata_user_registration_form_email" name="sonata_user_registration_form[email]" required="required" /></div>
+					<div><label for="sonata_user_registration_form_plainPassword_first" class="required">Contraseña</label><input type="password" id="sonata_user_registration_form_plainPassword_first" name="sonata_user_registration_form[plainPassword][first]" required="required" /></div>
+					<div><label for="sonata_user_registration_form_plainPassword_second" class="required">Confirmar contraseña</label><input type="password" id="sonata_user_registration_form_plainPassword_second" name="sonata_user_registration_form[plainPassword][second]" required="required" /></div>
+					<input type="hidden" id="sonata_user_registration_form__token" name="sonata_user_registration_form[_token]" value="uLUttCCxWJicSB0p989WqyYYhAwxBncqTn__enxoO4k" />
+				</div>
+				<div class="form-actions">
+					<input type="submit" value="Registrar" class="btn btn-success pull-right" />
+				</div>
+			</form>
         </div>
     </div>
     <header>
@@ -60,7 +78,7 @@
         <!-- Cabecera-->
         <div id="cabecera">
             <div id="logo">
-				<object data="{{ asset('svg/logo.svg')}}" type="image/svg+xml">
+				<object id="logoImg" data="{{ asset('svg/logo.svg')}}" type="image/svg+xml">
 					<img id="logoImg" src="{{ asset('svg/logo.svg')}}">
 				</object>
             </div>
@@ -95,68 +113,7 @@
     	{% if app.user != "" %}
 		    <h1>{{ app.user }}</h1>
 		{% endif %}
-        <!--<section>
-            <div id="slider">
-                <div id="contenidoSl">
-                    <div id="banner1">
-                        <h2>SLIDER 1 </h2>
-                    </div>
-                    <div id="banner2">
-                        <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
-                    </div>
-                    <div id="banner3">
-                        <h2>SLIDER 3</h2>
-                    </div>
-                    <div id="banner4">
-                        <h2>SLIDER 4</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="contenedor">
-            <h1>¿Qué es Cuerpo y Mente?</h1>
-            <p>
-                Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
-                forma mediante el entrenamiento cerebral, el control del estrés y el ejercicio físico.
-            </p>
-            <img src="svg/capacidades.svg">
-            <p>Consulta tu gráfica de progreso y mejora de una forma equilibrada tus capacidades físicas y mentales.</p>
-        </section>
-        <section class="contenedor">
-            <h1>Mejores usuarios</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posición</th>
-                        <th>Usuario</th>
-                        <th>Puntuación</th>
-                        <th>Activo</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>#1</td>
-                    <td>Manuel Anttuán</td>
-                    <td>234</td>
-                    <td>7 días</td>
-                </tr>
-                <tr>
-                    <td>#2</td>
-                    <td>Manuel Anttuán</td>
-                    <td>234</td>
-                    <td>7 días</td>
-                </tr>
-            </table>
-        </section>
-        <section class="contenedor">
-            <h1>Seccion 3</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
-        </section>
-        <section class="contenedor">
-            <h1>Seccion 4</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
-        </section>-->
+        <!---->
         {% endblock %}
     </main>
     <footer>

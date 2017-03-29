@@ -30,6 +30,13 @@ h1{
 	color: #560357;
 	text-align: center;
 	margin-bottom: 10px;
+	font-size: 24px;
+}
+h2{
+	color: #b984ce;
+	text-align: center;
+	margin-bottom: 7px;
+	font-size: 20px;
 }
 /***/
 body{

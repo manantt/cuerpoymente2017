@@ -34,14 +34,14 @@
 }
 /**/
 #registroPopUp form{
-	width:370px;
+	width:480px;
 	font-size:21px;
     margin: auto;
     padding:20px;
 }
 #registroPopUp form label{
 	float:left;
-	width:150px;
+	width:250px;
 	color:#b984cE;
 	padding: 5px;
 }
