@@ -1,0 +1,87 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+* @ORM\Entity
+*/
+class Usuario
+{
+	/** 
+	 * @ORM\Id
+	 * @ORM\Column(type="integer", length=11) 
+	 * @ORM\GeneratedValue
+	 */
+	protected $id; 
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $nombre; 
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $clave; 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set clave
+     *
+     * @param string $clave
+     *
+     * @return Usuario
+     */
+    public function setClave($clave)
+    {
+        $this->clave = $clave;
+
+        return $this;
+    }
+
+    /**
+     * Get clave
+     *
+     * @return string
+     */
+    public function getClave()
+    {
+        return $this->clave;
+    }
+
+    public function __toString()
+    {
+    	return $this->getNombre();
+    }
+}

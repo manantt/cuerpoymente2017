@@ -1,0 +1,39 @@
+{% extends 'index.html.twig' %}
+{% block titulo %}{{ficha.titulo}}{% endblock %}
+{% block contenido %}
+    <h2>{{ficha.titulo}}</h2>
+    <table id='tablaVista'>
+        <tr><td colspan='2'><a class='boton' href="{{ path('editar', {idFicha:ficha.id}) }}">Editar</a></td></tr>
+        <tr><td colspan='2'></td></tr>
+        <tr><td>Calle</td><td id='tdcalle'>{{ficha.calle}}</td></tr>
+        <tr><td>Código Postal</td><td id='tdcp'>{{ficha.codigoPostal}}</td></tr>
+        <tr><td>Ciudad</td><td id='tdciudad'>{{ficha.ciudad}}</td></tr>
+        <tr><td>Provincia</td><td id='tdprovincia'>{{ficha.provincia}}</td></tr>
+        <tr><td>Descripción</td><td id='tddescripcion'>{{ficha.descripcion}}</td></tr>
+        <tr><td>Tipo de ficha</td><td id='tdtipo'>{{ficha.tipoFicha}}</td></tr>
+        {% if ficha.tipoFicha == "1ficha_avanzada" or ficha.tipoFicha == "0ficha_minisite" %}
+            <h2>otros datos</h2>
+            <!--if($tipoDeFicha >= BDD::FICHA_PROFESIONAL){
+                echo "<tr><td>Comunidad autónoma</td><td id='tdca'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_COMUNIDAD_AUTONOMA)."</td></tr>";
+                echo "<tr><td>País</td><td id='tdpais'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_PAIS)."</td></tr>";
+                echo "<tr><td>Persona de contacto</td><td id='tdcontacto'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_CONTACTO)."</td></tr>";
+                echo "<tr><td>Teléfono</td><td id='tdtelefono'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_TELEFONO)."</td></tr>";
+                echo "<tr><td>Fax</td><td id='tdfax'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_FAX)."</td></tr>";
+                echo "<tr><td>Longitud</td><td id='tdlongitud'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_LONGITUD)."</td></tr>";
+                echo "<tr><td>Latitud</td><td id='tdlatitud'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_LATITUD)."</td></tr>";
+                echo "<tr><td>Población</td><td id='tdpoblacion'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_POBLACION)."</td></tr>";
+                echo "<tr><td>CIF</td><td id='tdcif'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_CIF)."</td></tr>";
+            }
+            if($tipoDeFicha >= BDD::FICHA_AVANZADA){
+                echo "<tr><td>Email</td><td id='tdemail'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_EMAIL)."</td></tr>";
+                echo "<tr><td>Página web</td><td id='tdweb'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_WEB)."</td></tr>";
+                echo "<tr><td>Hotline</td><td id='tdhotline'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_HOTLINE)."</td></tr>";
+                echo "<tr><td>Descripción larga</td><td id='tddesc2'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_DESCRIPCION_LARGA)."</td></tr>";
+                echo "<tr><td>Perfil en redes sociales</td><td id='tdrrss'>".BDD::getDatoFicha($idFicha, BDD::CAMPO_PERFIL_RRSS)."</td></tr>";
+            }       -->
+        {% endif %}
+    </table>
+{% endblock %}
+
+            
+

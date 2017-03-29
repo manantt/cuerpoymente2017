@@ -1,0 +1,681 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+* @ORM\Entity
+*/
+class Ficha
+{
+	/** 
+	 * @ORM\Id
+	 * @ORM\Column(type="integer", length=11)
+	 */
+	protected $id; 
+
+	/** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categoria") */
+	protected $categoria; 
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $titulo;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $calle;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $codigoPostal;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $ciudad;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $provincia;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $comunidadAutonoma;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $pais;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $email;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $web;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $personaDeContacto;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $telefono;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $fax;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $hotline;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $descripcion;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $longitud;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $latitud;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $poblacion;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $descripcionLarga;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $cif;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $tipoFicha;
+	
+	/** @ORM\Column(type="string", length=100, nullable=true) */
+	protected $perfilRedesSociales;  
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titulo
+     *
+     * @param string $titulo
+     *
+     * @return Ficha
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get titulo
+     *
+     * @return string
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * Set calle
+     *
+     * @param string $calle
+     *
+     * @return Ficha
+     */
+    public function setCalle($calle)
+    {
+        $this->calle = $calle;
+
+        return $this;
+    }
+
+    /**
+     * Get calle
+     *
+     * @return string
+     */
+    public function getCalle()
+    {
+        return $this->calle;
+    }
+
+    /**
+     * Set codigoPostal
+     *
+     * @param string $codigoPostal
+     *
+     * @return Ficha
+     */
+    public function setCodigoPostal($codigoPostal)
+    {
+        $this->codigoPostal = $codigoPostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codigoPostal
+     *
+     * @return string
+     */
+    public function getCodigoPostal()
+    {
+        return $this->codigoPostal;
+    }
+
+    /**
+     * Set ciudad
+     *
+     * @param string $ciudad
+     *
+     * @return Ficha
+     */
+    public function setCiudad($ciudad)
+    {
+        $this->ciudad = $ciudad;
+
+        return $this;
+    }
+
+    /**
+     * Get ciudad
+     *
+     * @return string
+     */
+    public function getCiudad()
+    {
+        return $this->ciudad;
+    }
+
+    /**
+     * Set provincia
+     *
+     * @param string $provincia
+     *
+     * @return Ficha
+     */
+    public function setProvincia($provincia)
+    {
+        $this->provincia = $provincia;
+
+        return $this;
+    }
+
+    /**
+     * Get provincia
+     *
+     * @return string
+     */
+    public function getProvincia()
+    {
+        return $this->provincia;
+    }
+
+    /**
+     * Set comunidadAutonoma
+     *
+     * @param string $comunidadAutonoma
+     *
+     * @return Ficha
+     */
+    public function setComunidadAutonoma($comunidadAutonoma)
+    {
+        $this->comunidadAutonoma = $comunidadAutonoma;
+
+        return $this;
+    }
+
+    /**
+     * Get comunidadAutonoma
+     *
+     * @return string
+     */
+    public function getComunidadAutonoma()
+    {
+        return $this->comunidadAutonoma;
+    }
+
+    /**
+     * Set pais
+     *
+     * @param string $pais
+     *
+     * @return Ficha
+     */
+    public function setPais($pais)
+    {
+        $this->pais = $pais;
+
+        return $this;
+    }
+
+    /**
+     * Get pais
+     *
+     * @return string
+     */
+    public function getPais()
+    {
+        return $this->pais;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Ficha
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set web
+     *
+     * @param string $web
+     *
+     * @return Ficha
+     */
+    public function setWeb($web)
+    {
+        $this->web = $web;
+
+        return $this;
+    }
+
+    /**
+     * Get web
+     *
+     * @return string
+     */
+    public function getWeb()
+    {
+        return $this->web;
+    }
+
+    /**
+     * Set personaDeContacto
+     *
+     * @param string $personaDeContacto
+     *
+     * @return Ficha
+     */
+    public function setPersonaDeContacto($personaDeContacto)
+    {
+        $this->personaDeContacto = $personaDeContacto;
+
+        return $this;
+    }
+
+    /**
+     * Get personaDeContacto
+     *
+     * @return string
+     */
+    public function getPersonaDeContacto()
+    {
+        return $this->personaDeContacto;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     *
+     * @return Ficha
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set fax
+     *
+     * @param string $fax
+     *
+     * @return Ficha
+     */
+    public function setFax($fax)
+    {
+        $this->fax = $fax;
+
+        return $this;
+    }
+
+    /**
+     * Get fax
+     *
+     * @return string
+     */
+    public function getFax()
+    {
+        return $this->fax;
+    }
+
+    /**
+     * Set hotline
+     *
+     * @param string $hotline
+     *
+     * @return Ficha
+     */
+    public function setHotline($hotline)
+    {
+        $this->hotline = $hotline;
+
+        return $this;
+    }
+
+    /**
+     * Get hotline
+     *
+     * @return string
+     */
+    public function getHotline()
+    {
+        return $this->hotline;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     *
+     * @return Ficha
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Set longitud
+     *
+     * @param string $longitud
+     *
+     * @return Ficha
+     */
+    public function setLongitud($longitud)
+    {
+        $this->longitud = $longitud;
+
+        return $this;
+    }
+
+    /**
+     * Get longitud
+     *
+     * @return string
+     */
+    public function getLongitud()
+    {
+        return $this->longitud;
+    }
+
+    /**
+     * Set latitud
+     *
+     * @param string $latitud
+     *
+     * @return Ficha
+     */
+    public function setLatitud($latitud)
+    {
+        $this->latitud = $latitud;
+
+        return $this;
+    }
+
+    /**
+     * Get latitud
+     *
+     * @return string
+     */
+    public function getLatitud()
+    {
+        return $this->latitud;
+    }
+
+    /**
+     * Set poblacion
+     *
+     * @param string $poblacion
+     *
+     * @return Ficha
+     */
+    public function setPoblacion($poblacion)
+    {
+        $this->poblacion = $poblacion;
+
+        return $this;
+    }
+
+    /**
+     * Get poblacion
+     *
+     * @return string
+     */
+    public function getPoblacion()
+    {
+        return $this->poblacion;
+    }
+
+    /**
+     * Set descripcionLarga
+     *
+     * @param string $descripcionLarga
+     *
+     * @return Ficha
+     */
+    public function setDescripcionLarga($descripcionLarga)
+    {
+        $this->descripcionLarga = $descripcionLarga;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcionLarga
+     *
+     * @return string
+     */
+    public function getDescripcionLarga()
+    {
+        return $this->descripcionLarga;
+    }
+
+    /**
+     * Set cif
+     *
+     * @param string $cif
+     *
+     * @return Ficha
+     */
+    public function setCif($cif)
+    {
+        $this->cif = $cif;
+
+        return $this;
+    }
+
+    /**
+     * Get cif
+     *
+     * @return string
+     */
+    public function getCif()
+    {
+        return $this->cif;
+    }
+
+    /**
+     * Set tipoFicha
+     *
+     * @param string $tipoFicha
+     *
+     * @return Ficha
+     */
+    public function setTipoFicha($tipoFicha)
+    {
+        $this->tipoFicha = $tipoFicha;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoFicha
+     *
+     * @return string
+     */
+    public function getTipoFicha()
+    {
+        return $this->tipoFicha;
+    }
+
+    /**
+     * Set perfilRedesSociales
+     *
+     * @param string $perfilRedesSociales
+     *
+     * @return Ficha
+     */
+    public function setPerfilRedesSociales($perfilRedesSociales)
+    {
+        $this->perfilRedesSociales = $perfilRedesSociales;
+
+        return $this;
+    }
+
+    /**
+     * Get perfilRedesSociales
+     *
+     * @return string
+     */
+    public function getPerfilRedesSociales()
+    {
+        return $this->perfilRedesSociales;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->categorias = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add categoria
+     *
+     * @param \AppBundle\Entity\Categoria $categoria
+     *
+     * @return Ficha
+     */
+    public function addCategoria(\AppBundle\Entity\Categoria $categoria)
+    {
+        $this->categorias[] = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Remove categoria
+     *
+     * @param \AppBundle\Entity\Categoria $categoria
+     */
+    public function removeCategoria(\AppBundle\Entity\Categoria $categoria)
+    {
+        $this->categorias->removeElement($categoria);
+    }
+
+    /**
+     * Get categorias
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategorias()
+    {
+        return $this->categorias;
+    }
+
+    public function __toString()
+    {
+    	return $this->getTitulo();
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Ficha
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set categoria
+     *
+     * @param \AppBundle\Entity\Categoria $categoria
+     *
+     * @return Ficha
+     */
+    public function setCategoria(\AppBundle\Entity\Categoria $categoria = null)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return \AppBundle\Entity\Categoria
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+}

@@ -1,0 +1,7 @@
+{% extends 'index.html.twig' %}
+
+{% block titulo %}Editar {{ficha.titulo}}{% endblock %}
+{% block contenido %}
+	<h1>Editar {{ficha.titulo}}</h1>
+	{{ form(formulario) }}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'index.html.twig' %}
+{% block titulo %}Categorias{% endblock %}
+
+{% block contenido %}
+    <form method="post" action='{{ path('categoria', {idCategoria: idCategoria, pag:  1}) }}'>
+        <label>Fichas por página: <input name='paginacion' type='number' min='10' max='50' step='5' value='{{fichasPorPagina}}'></label>
+        <input type='submit' value='Cambiar'>
+    </form>
+
+    <h4>Página {{pagina}}</h4>
+    <a href='{{ path('categoria', {idCategoria: idCategoria, pag:  pagina-1}) }}' class='{{(pagina<=1)?"disabled":""}}'> <-Anterior -</a>
+    <a href='{{ path('categoria', {idCategoria: idCategoria, pag:  pagina+1}) }}'> Siguiente -></a><br><br>
+    {% for ficha in fichas %}
+        <a href="{{ path('ficha', {idFicha: ficha.id }) }}">{{ficha.titulo}}</a><br>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,27 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+    admin.usuario:
+        class: AppBundle\Admin\UsuarioAdmin
+        arguments: [~, AppBundle\Entity\Usuario, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Usuario }
+    admin.categoria:
+        class: AppBundle\Admin\CategoriaAdmin
+        arguments: [~, AppBundle\Entity\Categoria, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Categoria }
+    admin.ficha:
+        class: AppBundle\Admin\FichaAdmin
+        arguments: [~, AppBundle\Entity\Ficha, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Ficha }
+    miservicio.contadorvisitas:
+        class: AppBundle\Util\ContadorVisitas
+        arguments: ['/visitas.log']

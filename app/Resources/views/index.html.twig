@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block titulo %}Ejercicio Symfony{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('style/style.css')}}">
+    <script src="{{ asset('scripts/jQuery.js')}}"></script>
+    <!--<script src="{{ asset('scripts/script.js')}}"></script>-->
+    {% block scripts %}{% endblock %}
+  </head>
+  <body>
+    <header>
+        {% set locale = app.request.locale %}
+        {% if locale == 'es' %}
+            <span style="color:gray">Español</span>
+            <a style="color:gray" href="{{ path('portada', { _locale: 'en' }) }}">English</a>
+        {% elseif locale == 'en' %}
+            <a style="color:gray" href="{{ path('portada', { _locale: 'es' }) }}">Español</a>
+            <span style="color:gray">English</span>
+        {% endif %}
+        <h1>{{ 'cabecera.logo'|trans }}</h1>
+    </header>
+    <div id="div1"></div>
+    <nav>
+        <ul>
+            <li><a href="#">{{ visitas }} visitas a la página</a></li>
+            <li><a href="{{ path('index') }}">menú general</a></li>
+            <li><a href="{{ path('usuario_logout') }}">cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="menuCat">
+            <h2>Menú de Categorías</h2>
+            <ul>
+                {% for categoria in categorias %}
+                    <li><a href="{{ path('categoria', {idCategoria: categoria.id, pag:1}) }}">{{ categoria.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section id="vista">
+            {% block contenido %}<h2>Seleccione una categoría</h2>{% endblock %}
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+  </body>
+</html>

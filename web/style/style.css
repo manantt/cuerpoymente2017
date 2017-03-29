@@ -1,0 +1,98 @@
+/* reset */
+*{
+	margin:0;padding:0;
+	font-family:Arial;
+}
+html, body{
+	height:100%;
+}
+/* header */
+header{
+	background-color:black;
+}
+header h1{
+	margin-left:25%;
+	padding:20px 0;
+	color:white;
+	
+}
+/* navigation */
+nav{
+	background-color:black;
+	border:2px solid white;
+}
+nav ul{
+	text-align:right;
+}
+nav ul li{
+	display:inline;
+} 
+nav ul li a{
+	text-decoration:none;
+	color:white;
+	padding:0 5px;
+}
+/* main */
+main{
+	height:100%;
+}
+main #menuCat{
+	width:300px;
+	background-color:black;
+	color:white;
+	display:inline-block;
+}
+main #menuCat h2{
+	padding:10px;
+}
+main #menuCat ul li a{
+	color:white;
+	text-decoration:none;
+	padding-left:30px;
+}
+main #menuCat ul li a:hover{
+	color:#aaa;
+	text-decoration:underline;
+}
+main #vista{
+	height:100%;
+	display:inline-block;
+	width:75%;
+	padding:30px;
+	float:right;
+	box-sizing: border-box;
+}
+main #vista a{
+	color:black;
+	text-decoration: none;
+}
+main #vista .boton{
+	padding:5px;
+	text-decoration:none;
+	background-color:black;
+	color:white;
+	margin:20px;
+}
+main #vista .boton:hover{
+	background-color:#555;
+}
+main #vista table{
+	margin:20px;
+}
+main #vista table td{
+	min-width:150px;
+	padding:2px;
+}
+main #tablaEdicion{
+	display:none;
+}
+main .disabled{
+	display:none;
+}
+.error{
+	text-align: center;
+	color:red;
+}
+.hide{
+	display:none;
+}

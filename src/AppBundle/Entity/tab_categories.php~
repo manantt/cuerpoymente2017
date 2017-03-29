@@ -1,0 +1,57 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+* @ORM\Entity
+*/
+class tab_categories
+{
+	/** 
+	 * @ORM\Id
+	 * @ORM\Column(type="integer", length=11) 
+	 * @ORM\GeneratedValue
+	 */
+	protected $catid; 
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $name;
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $image;
+
+	/** @ORM\Column(type="string", length=10) */
+	protected $image_position;
+
+	/** @ORM\Column(type="text") */
+	protected $description;
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $introtext;
+
+	/** @ORM\Column(type="integer", length=1) */
+	protected $published;
+
+	/** @ORM\Column(type="int", length=11) */
+	protected $checked_out;
+
+	/** @ORM\Column(type="datetime") */
+	protected $checked_out_time;
+
+	/** @ORM\Column(type="integer", length=11) */
+	protected $ordering;
+
+	/** @ORM\Column(type="integer", length=3) */
+	protected $access;
+
+	/** @ORM\Column(type="integer", length=11) */
+	protected $count;
+
+	/** @ORM\Column(type="text") */
+	protected $params;
+
+	/** @ORM\Column(type="string", length=100) */
+	protected $icon;
+}
