@@ -1,4 +1,4 @@
-var ancho = 650;
+var ancho = 200;
 var alto = 110;
 
 var container;

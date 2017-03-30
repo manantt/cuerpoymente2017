@@ -1,0 +1,135 @@
+{% extends 'portada.html.twig' %}
+{% block titulo %}Inicio - CyM{% endblock %}
+
+{% block scripts %}
+
+{% if app.user != "" %} 
+	<script src="{{ asset('scripts/Chart.js')}}"></script>
+	<script>
+	var radarChartData = {
+	    labels: ["Atención", "Memoria", "Percepción", "Ejecución", "Rapidez", "Concentración", "Relajación"],
+	    datasets: [{
+	            label: "My First dataset",
+	            fillColor: "rgba(120,200,0,0.01)",
+	            strokeColor: "rgba(120,200,0,1)",
+	            pointColor: "rgba(120,200,0,0)",
+	            pointStrokeColor: "rgba(120,200,0,0)",
+	            pointHighlightFill: "rgba(120,200,0,0)",
+	            pointHighlightStroke: "rgba(120,200,0,0)",
+	            data: [10, 10, 10, 10, 10, 10, 10]
+	        },
+	        {
+	            label: "My Second dataset",
+	            fillColor: "rgba(185,132,206,0.4)",
+	            strokeColor: "rgba(56,3,57,1)",
+	            pointColor: "rgba(56,3,57,1)",
+	            pointStrokeColor: "#fff",
+	            pointHighlightFill: "#fff",
+	            pointHighlightStroke: "rgba(56,3,57,1)",
+	            data: [7, 5, 7, 9, 8, 8, 7]
+	        }
+	    ]
+	};
+
+	window.onload = function() {
+	    window.myRadar = new Chart(document.getElementById("canvasCM").getContext("2d")).Radar(radarChartData, {
+	        responsive: false
+	    });
+	}
+	</script>
+{% endif %}
+{% endblock %}
+
+
+{% block quees %}<!-- QUE ES CYM -->
+<section  class="contenedor">
+    <h1>¿Qué es Cuerpo y Mente?</h1>
+    <p>
+        Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
+        forma mediante el entrenamiento cerebral, el control del estrés y el ejercicio físico.
+    </p>
+    <img src="" width="100" height="100">
+    <p>Consulta tu gráfica de progreso y mejora de una forma equilibrada tus capacidades físicas y mentales.</p>
+</section>
+{% endblock %}
+
+{% block perfil %}<!-- PERFIL -->
+<section id="perfil" class="contenedor">
+    <table>
+    	<thead>
+    		<th class="gris"><h1>{{app.user}}</h1></th>
+    		<th><h2>Capacidades mentales</h2></th>
+    		<th><h2>Capacidades físicas</h2></th>
+    	</thead>
+        <tr>
+            <td class="gris">
+                <p>Registro: <br><label>29/03/2017</label></p>
+                <p>Entrenamientos: <br><label>17</label></p>
+                <p>Puntuación: <br><label>209</label></p>
+            </td>
+            <td>
+                <canvas id="canvasCM" height="300" width="300"></canvas>
+            </td>
+            <td>
+                <p>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit, sed do eiusmod
+                tempor <br>incididunt ut labore et dolore magna aliqua. .</p>
+            </td>
+        </tr>
+        <tr>
+        	<td colspan="3"><h2>¡Por encima del <span>92%</span> de los usuarios!</h2></td>
+        </tr>
+    </table>
+</section>
+{% endblock %}
+
+{% block top10 %}<!-- TOP10 -->
+<section id="top10" class="contenedor">
+    <h1>Mejores usuarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>Usuario</th>
+                <th>Puntuación</th>
+                <th>Activo</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>#1</td>
+            <td>Manuel Anttuán</td>
+            <td>234</td>
+            <td>7 días</td>
+        </tr>
+        <tr>
+            <td>#2</td>
+            <td>Manuel Anttuán</td>
+            <td>234</td>
+            <td>7 días</td>
+        </tr>
+    </table>
+</section>
+{% endblock %}  
+
+{% block novedades %}<!-- NOVEDADES -->
+<section class="contenedor">
+    <h1>Seccion 3</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
+</section>
+{% endblock %}
+
+{% block seccion4anon %}<!-- ?? -->
+<section class="contenedor">
+    <h1>Seccion 4</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deserunt repellat quasi sed voluptatem vero culpa ea labore veniam iste optio, mollitia fugiat voluptas, hic totam laudantium corporis. In, quam.</p>
+</section>
+{% endblock %}
+
+{% block seccion4 %}<!-- ?? -->
+<section class="contenedor">
+    <h1>{{app.user}}</h1>
+</section>
+{% endblock %}
+
+            
+

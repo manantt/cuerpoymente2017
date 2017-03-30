@@ -28,17 +28,27 @@ main thead{
 /* SECCION 1 - QUÉ ES*/
 
 /* SECCION 1 - PERFIL*/
+#perfil{
+    padding-left: 0;
+}
 #perfil h1{
     text-align: left;
 }
 #perfil td{
-    padding-left:10px;
 }
 #perfil p{
-    font-size: 18px;
+    padding: 3px;
 }
-#perfil p b{
-    font-size: 20px;
+#perfil p label{
+    color:#888;
+    font-weight: bold;
+}
+#perfil h2 span{
+    color: #560357;
+    font-size: 24px;
+}
+#perfil .gris{
+    background: #aaa;
 }
 
 /* SECCION 2 - TOP10*/

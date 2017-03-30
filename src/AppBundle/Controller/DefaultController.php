@@ -31,7 +31,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 		$categorias = $em->getRepository('AppBundle:Categoria')->findBy(array('idPadre' => NULL));
 		
-		return $this->render('portada.html.twig');
+		return $this->render('portadaContenido.html.twig');
     }
     /**
      * @Route("/categoria/{idCategoria}/{pag}/", name="categoria")
