@@ -83,12 +83,13 @@ main #sliderSection { /*slider*/
 	border-radius: 2px;
 	box-shadow: none;
 	margin: 0;
-	height: 8px;
+	height: 9px;
+	border:1px solid rgba(0, 0, 0, 0.13);
 }
 #perfil .area-capacidad .progress .bar {
 	background: #b984ce;
 	box-shadow: none;
-	height: 8px;
+	height: 7px;
 }
 /**/
 .novedad{

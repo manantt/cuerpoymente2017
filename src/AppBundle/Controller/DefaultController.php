@@ -32,21 +32,27 @@ class DefaultController extends Controller
      */
     public function perfilAction(Request $request)
     {
-		return $this->render('base.html.twig');
+		if($this->getUser())
+			return $this->render('perfil.html.twig');
+		else
+			return $this->redirect("/login", 301);
     }
     /**
      * @Route("/entrenamiento", name="entrenamiento")
      */
     public function entrenamientoAction(Request $request)
     {
-		return $this->render('base.html.twig');
+		if($this->getUser())
+			return $this->render('entrenamiento.html.twig');
+		else
+			return $this->redirect("/login", 301);
     }
     /**
      * @Route("/tienda", name="tienda")
      */
     public function tiendaAction(Request $request)
     {
-		return $this->render('base.html.twig');
+		return $this->render('tienda.html.twig');
     }
     /**
      * @Route("/categoria/{idCategoria}/{pag}/", name="categoria")
