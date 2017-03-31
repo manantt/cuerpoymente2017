@@ -2,8 +2,7 @@
     background-color:#560357;
 	background-image:url("../svg/bg2.svg");
 	box-shadow:0px 0px 1px 1px #b984cE;
-    display:grid;
-    grid-template-rows: 21px auto 29px;
+    height: 175px;
 }
 /* Menu secundario*/
 img.bandera{
@@ -13,16 +12,13 @@ img.bandera{
 	cursor: pointer;
 }
 #menuSec, #menuSec a{
-	grid-row: 1 / 2;
-    display:grid;
-    grid-template-columns: 33% auto 33%;
 	background-color: rgba(46,03,47,0.4);
 	color: #f2f2f2;
 	box-shadow: 0px 0px 2px 2px #404;
     text-decoration: none;
+    height: 20px;
 }
 #menuSec1{
-    grid-column: 1 / 2;
     display:flex;
     flex-wrap:nowrap;
     justify-content:center;
@@ -33,33 +29,94 @@ img.bandera{
 }
 /* Cabecera */
 #cabecera{
-    grid-row: 2 / 3;
-    display:grid;
-    grid-template-columns: 10% auto 25% 10%;
+    
 }
 #logo{
-    grid-column: 2 / 3;
-    justify-content:center;
-    max-height:100px !important;
+    height:120px;
+    width: 650px;
+    margin: auto;
 }
 #logo canvas{
-    position: relative;
+    position: absolute;
     top:5px;
-    left: 220px;
+    left: 340px;
     z-index: 2 !important;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     border-radius: 60px;
 }
 #logoImg{
-    position:absolute;
-    z-index:3 !important;
+    position:relative;
+    z-index:3;
+    display: inline-block;
+    margin: auto;
 }
+/* usuario */
 #login{
-    grid-column: 3 / 4;
-    display:flex;
-    align-items: center;
-    justify-content:center;
+    width: 300px;
+    height:100px;
+    display: inline-block;
+    position: relative;
+}
+#login form{
+    width: 300px;
+    height:150px;
+    position: absolute;
+    background-image:url("../svg/acceso.svg");
+}
+@-webkit-keyframes balanceo {/* animación de balanceo*/
+  20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+}
+#login form:hover{
+    background-image:url("../svg/accesohover.svg");
+    -webkit-animation: 2s balanceo 1;
+}
+#login input[type="submit"]{
+    width:70px;
+    height:70px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    cursor:pointer;
+    position:relative;
+    top:-78px;
+    left:227px;
+    opacity:0;
+}
+#login input[type="text"], #login input[type="password"]{
+    width:180px;
+    padding:3px 8px;
+    margin:6px;
+    margin-left:25px;
+    font-size:19px;
+    outline: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color:#600661;
+    border:none;
+    color:#b984cE;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#login input[type="text"]{
+    margin-top:40px;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #b984cE !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #b984cE !important;
+   opacity:  1;
 }
 /* menu */
 #linea{
@@ -68,7 +125,6 @@ img.bandera{
 	clear: both;
 }
 nav{
-	grid-row: 3 / 4;
 	color:#b984cE;
 	text-align:center;
 	box-shadow: 0px 0px 2px 2px #600661;
@@ -77,18 +133,16 @@ nav{
     align-items:center;
     max-height:25px;
 }
-nav a{
+nav label{
     margin: 0 10px;
     position:relative;
-    top: 20px;
+    top: 10px;
     width:50px;
     height:50px;
+    cursor:pointer;
+    z-index: 5;
 }
-#ico1{
-    background-image:url('../svg/ico1.svg');
-}
-#ico1:hover{
-    background-image:url('../svg/ico1_hover.svg');
+#ico1, #ico2, #ico3, #ico4{
 }
 #ico1{
     background-image:url('../svg/ico1.svg');

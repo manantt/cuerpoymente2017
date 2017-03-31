@@ -25,13 +25,28 @@ class DefaultController extends Controller
      */
     public function portadaAction(Request $request)
     {
-        // $this->get('miservicio.contadorvisitas')->getVisitas();
-        $this->get('miservicio.contadorvisitas')->nuevaVisita();
-
-        $em = $this->getDoctrine()->getManager();
-		$categorias = $em->getRepository('AppBundle:Categoria')->findBy(array('idPadre' => NULL));
-		
-		return $this->render('portadaContenido.html.twig');
+		return $this->render('portada.html.twig');
+    }
+    /**
+     * @Route("/perfil", name="perfil")
+     */
+    public function perfilAction(Request $request)
+    {
+		return $this->render('base.html.twig');
+    }
+    /**
+     * @Route("/entrenamiento", name="entrenamiento")
+     */
+    public function entrenamientoAction(Request $request)
+    {
+		return $this->render('base.html.twig');
+    }
+    /**
+     * @Route("/tienda", name="tienda")
+     */
+    public function tiendaAction(Request $request)
+    {
+		return $this->render('base.html.twig');
     }
     /**
      * @Route("/categoria/{idCategoria}/{pag}/", name="categoria")

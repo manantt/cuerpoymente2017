@@ -1,91 +1,311 @@
 {% extends 'base.html.twig' %}
 {% block titulo %}Inicio - CyM{% endblock %}
-
 {% block scripts %}
-
 {% if app.user != "" %} 
-	<script src="{{ asset('scripts/Chart.js')}}"></script>
-	<script>
-	var radarChartData = {
-	    labels: ["Atención", "Memoria", "Percepción", "Ejecución", "Rapidez", "Concentración", "Relajación"],
-	    datasets: [{
-	            label: "My First dataset",
-	            fillColor: "rgba(120,200,0,0.01)",
-	            strokeColor: "rgba(120,200,0,1)",
-	            pointColor: "rgba(120,200,0,0)",
-	            pointStrokeColor: "rgba(120,200,0,0)",
-	            pointHighlightFill: "rgba(120,200,0,0)",
-	            pointHighlightStroke: "rgba(120,200,0,0)",
-	            data: [10, 10, 10, 10, 10, 10, 10]
-	        },
-	        {
-	            label: "My Second dataset",
-	            fillColor: "rgba(185,132,206,0.4)",
-	            strokeColor: "rgba(56,3,57,1)",
-	            pointColor: "rgba(56,3,57,1)",
-	            pointStrokeColor: "#fff",
-	            pointHighlightFill: "#fff",
-	            pointHighlightStroke: "rgba(56,3,57,1)",
-	            data: [7, 5, 7, 9, 8, 8, 7]
-	        }
-	    ]
-	};
-
-	window.onload = function() {
-	    window.myRadar = new Chart(document.getElementById("canvasCM").getContext("2d")).Radar(radarChartData, {
-	        responsive: false
-	    });
-	}
-	</script>
+<script src="{{ asset('scripts/Chart.js')}}"></script>
+<script>
+    var radarChartData = {
+        labels: ["Atención", "Memoria", "Percepción", "Ejecución", "Rapidez", "Concentración", "Relajación"],
+        datasets: [{
+                label: "My First dataset",
+                fillColor: "rgba(120,200,0,0.01)",
+                strokeColor: "rgba(120,200,0,1)",
+                pointColor: "rgba(120,200,0,0)",
+                pointStrokeColor: "rgba(120,200,0,0)",
+                pointHighlightFill: "rgba(120,200,0,0)",
+                pointHighlightStroke: "rgba(120,200,0,0)",
+                data: [10, 10, 10, 10, 10, 10, 10]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(185,132,206,0.4)",
+                strokeColor: "rgba(56,3,57,1)",
+                pointColor: "rgba(56,3,57,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(56,3,57,1)",
+                data: [7, 5, 7, 9, 8, 8, 7]
+            }
+        ]
+    };
+    
+    window.onload = function() {
+        window.myRadar = new Chart(document.getElementById("canvasCM").getContext("2d")).Radar(radarChartData, {
+            responsive: false
+        });
+    }
+</script>
 {% endif %}
-
 {% endblock %}
 {% block main %}
-    <!-- SLIDER -->
-    <section> 
-        <div id="slider">
-            <div id="contenidoSl">
-                <div id="banner1">
-                    <h2>SLIDER 1 </h2>
-                </div>
-                <div id="banner2">
-                    <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
-                </div>
-                <div id="banner3">
-                    <h2>SLIDER 3</h2>
-                </div>
-                <div id="banner4">
-                    <h2>SLIDER 4</h2>
-                </div>
+<!-- SLIDER -->
+<section id="sliderSection">
+    <div id="slider">
+        <div id="contenidoSl">
+            <div id="banner1">
+                <br><br>
+                <blockquote>
+                    <p>El verdadero gozo viene de la actividad de la mente y el ejercicio del cuerpo, los dos van unidos.</p>
+                    <small>Frase célebre de <cite title="Nombre Apellidos">Alexander von Humboldt</cite></small>
+                </blockquote>
+            </div>
+            <div id="banner2">
+                <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
+            </div>
+            <div id="banner3">
+                <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
+            </div>
+            <div id="banner4">
+                <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
             </div>
         </div>
-    </section>
-    {% if app.user == "" %} 
-        {% block quees %}
-            <!-- QUÉ ES CyM -->
-        {% endblock %}
-    {% else %}
-        {% block perfil %}
-            <!-- PERFIL -->
-        {% endblock %}
-    {% endif %}
-    {% block top10 %}
-        <!-- TOP10 -->
-    {% endblock %}     
-    {% block novedades %}
-        <!-- NOVEDADES -->
-    {% endblock %} 
-    {% if app.user == "" %}
-        {% block seccion4anon %}
-            <!-- SECCION 4 ANNONIM -->
-        {% endblock %}
-    {% else %}
-        {% block seccion4 %}
-            <!-- SECCION 4 USUARIO -->
-        {% endblock %}
-    {% endif %}
-    
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <section id="top10" class="contenedor">
+                <h1>Top10</h1>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Top</th>
+                            <th>Usuario</th>
+                            <th>Puntuación</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>#1</td>
+                        <td>Manuel Anttuán</td>
+                        <td>234</td>
+                    </tr>
+                    <tr>
+                        <td>#2</td>
+                        <td>Daniel Count</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#3</td>
+                        <td>Elisa Elle</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#4</td>
+                        <td>Juan Canto</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#5</td>
+                        <td>Ester de Diego</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#6</td>
+                        <td>Pablo Pelota</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#7</td>
+                        <td>Alejandro García</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#8</td>
+                        <td>ProOne</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#9</td>
+                        <td>Prueba</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>#10</td>
+                        <td>César Álvarez</td>
+                        <td>230</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        <div class="col-lg-9">
+            {% if app.user == "" %} 
+            <section id="quees">
+                <h1>¿Qué es Cuerpo y Mente?</h1>
+                <p>
+                    Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
+                    forma mediante el entrenamiento cerebral, el control del estrés y el ejercicio físico.
+                </p>
+                <img src="" width="100" height="100">
+                <a>REGÍSTRATE AHORA</a>
+                <div class="clear"/><br>
+                <p>Consulta tu gráfica de progreso y mejora de una forma equilibrada tus capacidades físicas y mentales.</p>
+            </section>
+            {% else %}
+            <section id="perfil" class="container-fluid">
+                <div class="col-sm-2">
+                    <h1>{{app.user}}</h1>
+                    <img width="100" height="100">
+                    <p>Registro: <br><label>29/03/2017</label></p>
+                    <p>Entrenamientos: <br><label>17</label></p>
+                    <div class="area-capacidad">
+                        <span class="area">Puntuación</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <h3>¡Por encima del <span>92%</span> de los usuarios!</h3>
+                </div>
+                <div class="col-sm-5">
+                    <h2>Capacidades mentales</h2>
+                    <div class="area-capacidad">
+                        <span class="area">Funciones ejecutivas</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Antención</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Memoria</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Percepción y rapidez</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Relajación</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <!-- <canvas id="canvasCM" height="300" width="300"></canvas> -->
+                </div>
+                <div class="col-sm-5">
+                    <h2>Capacidades físicas</h2>
+                    <div class="area-capacidad">
+                        <span class="area">Fuerza</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Resistencia</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Velocidad</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Coordinación</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                    <div class="area-capacidad">
+                        <span class="area">Flexibilidad</span> <span class="puntuacion">1768</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 91.163887421123%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <section class="">
+                <h1>Elige un programa de entrenamiento</h1>
+                <br>
+                <div class="programa">
+                    <div class="textIzq">
+                        <h2>Programa básico</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para la mayoría de usuarios<br><img src="{{ asset('svg/check.svg')}}" class="icon">Mejora tu físico<br><img src="{{ asset('svg/check.svg')}}" class="icon">Gana agilidad mental<br></p>
+                    </div>
+                    <img class="imgDer">
+                </div>
+                <div class="programa">
+                    <div class="textDer">
+                        <h2>Programa 30'</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para personas con poco tiempo<br>
+                        <img src="{{ asset('svg/check.svg')}}" class="icon">30 minutos diarios<br>
+                        <img src="{{ asset('svg/check.svg')}}" class="icon">Mejoras notables<br></p>
+                    </div>
+                    <img class="imgIzq">
+                </div>
+                <div class="programa">
+                    <div class="textIzq">
+                        <h2>Tercera edad</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Manténgase joven<br><img src="{{ asset('svg/check.svg')}}" class="icon">Previene problemas físicos<br><img src="{{ asset('svg/check.svg')}}" class="icon">Evita enfermedad mental<br></p>
+                    </div>
+                    <img class="imgDer">
+                </div>
+                <div class="programa">
+                    <div class="textDer">
+                        <h2>Programa 4</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Cbhdisfjdshak<br><img src="{{ asset('svg/check.svg')}}" class="icon">Jkldsahfjsd hdfskfjksdjf <br><img src="{{ asset('svg/check.svg')}}" class="icon">Hdjslhfkjashkfjhaf<br></p>
+                    </div>
+                    <img class="imgIzq">
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-3 contenedor">
+            <h2>Novedades</h2>
+            <section class="novedad">
+                <img>
+                <h2>31 Marzo 2017</h2>
+                <p>Rediseñada la portada.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>28 Marzo 2017</h2>
+                <p>Añadidas novedades.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>28 Marzo 2017</h2>
+                <p>Comenzado el proyecto Cuerpo y Mente.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>31 Marzo 2017</h2>
+                <p>Rediseñada la portada.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>28 Marzo 2017</h2>
+                <p>Añadidas novedades.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>28 Marzo 2017</h2>
+                <p>Comenzado el proyecto Cuerpo y Mente.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>28 Marzo 2017</h2>
+                <p>Añadidas novedades.</p>
+            </section>
+            <section class="novedad">
+                <img>
+                <h2>28 Marzo 2017</h2>
+                <p>Comenzado el proyecto Cuerpo y Mente.</p>
+            </section>
+        </div>
+    </div>
+</div>
 {% endblock %}
-
-            
-

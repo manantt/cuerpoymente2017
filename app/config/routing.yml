@@ -9,6 +9,9 @@ app:
 index:
     path: /
     defaults: { _controller: AppBundle:Default:index }
+perfil:
+    path: /{_locale}/perfil
+    defaults: { _controller: AppBundle:Default:perfil }
 
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
