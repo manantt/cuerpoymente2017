@@ -93,6 +93,10 @@ function Personaje(x, y) {
 }
 Personaje.prototype = new Celula();
 Personaje.prototype.constructor = Personaje;
+Personaje.prototype.mouseMove = function(ev){
+	mousex = ev.x - absX;
+	mousey = ev.y - absY;
+};
 Personaje.prototype.mouseClick = function(ev){
 	if(!comenzado){
 		comenzado = true;

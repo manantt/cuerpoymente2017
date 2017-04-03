@@ -8,12 +8,11 @@
 	height: 300px;
 }
 #canvas, iframe{
-	width: 90%;
-	height: 300px;
+	width: 700px;
+	height: 400px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-}
-#canvas{
-	border:1px solid black;
+	display: block;
+	margin: auto;
 }

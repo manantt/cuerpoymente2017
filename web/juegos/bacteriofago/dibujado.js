@@ -5,13 +5,13 @@ img2.src = "/svg/bacteria2.svg";
 var img3 = new Image(76,76);
 img3.src = "/svg/bacteria3.svg";
 
-var mousex = 0;
-var mousey = 0;
+var mousex = 10;
+var mousey = 10;
 
 function paint() { 
     ctx.clearRect(0, 0, 2000, 2000);//limpia el canvas
 	pintaGRojos();
-    //drawRectangle(ctx, mousex, mousey, 234, 1, 0, 1);
+    drawBacteria(ctx, mousex, mousey, 10, 99, true);
 	//Personaje.paint();
 	ctx.fillStyle = "#f00";
     ctx.font = 'bold 40px Gloria Hallelujah';

@@ -58,7 +58,8 @@ function loadGame() {
         Personaje.mouseClick(event);
     }
     //
-    canvas.onmouseover = function(){
+    canvas.onmousemove = function(){
+        Personaje.mouseMove(event);
     }
     //comienzo el bucle de juego
     var i = setInterval("bucle()", "18"); //aprox 60fps

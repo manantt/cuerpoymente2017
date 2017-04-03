@@ -21,7 +21,7 @@ class Ejercicios  extends AbstractFixture implements OrderedFixtureInterface
 			array('id' => 3, 'nombre' => 'Bacteriófago','descripcion' => 'Juego que consiste en blablabla...', 'duracion' => '1:00',  'ruta' => 'bacteriofago',
 						'seccion' => '2', 'tipo' => '1',
 						'fuerza' => 0, 'velocidad' => 0, 'resistencia' => 0, 'flexibilidad' => 0, 'coordinacion' => 0,
-						'ejecucion' => 8, 'atencion' => 5, 'memoria' => 0, 'percepcionyrapidez' => 5, 'relajacion' => 0),
+						'ejecucion' => 9, 'atencion' => 6, 'memoria' => 3, 'percepcionyrapidez' => 0, 'relajacion' => 0),
 		);
 		foreach ($ejercicios as $ejercicio) {
 			$entidad = new Ejercicio();
