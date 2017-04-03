@@ -3,11 +3,10 @@
 <head>
     <title>{% block titulo %}CyM{% endblock %}</title>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <link href="{{ asset('style/style.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('style/cabecera.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('style/index.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('style/miSlider.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('style/registro.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -19,9 +18,6 @@
     <script src="{{ asset('scripts/miSlider.js')}}"></script>
     <script src="{{ asset('scripts/cora3d.js')}}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    {% if app.user != "" %}
-    <script src="{{ asset('scripts/registroPopUp.js')}}"></script>
-    {% endif %}
 
     {% block scripts %}{% endblock %}
 </head>

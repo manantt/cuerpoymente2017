@@ -1,41 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block titulo %}Inicio - CyM{% endblock %}
 {% block scripts %}
-{% if app.user != "" %} 
-<script src="{{ asset('scripts/Chart.js')}}"></script>
-<script>
-    var radarChartData = {
-        labels: ["Atención", "Memoria", "Percepción", "Ejecución", "Rapidez", "Concentración", "Relajación"],
-        datasets: [{
-                label: "My First dataset",
-                fillColor: "rgba(120,200,0,0.01)",
-                strokeColor: "rgba(120,200,0,1)",
-                pointColor: "rgba(120,200,0,0)",
-                pointStrokeColor: "rgba(120,200,0,0)",
-                pointHighlightFill: "rgba(120,200,0,0)",
-                pointHighlightStroke: "rgba(120,200,0,0)",
-                data: [10, 10, 10, 10, 10, 10, 10]
-            },
-            {
-                label: "My Second dataset",
-                fillColor: "rgba(185,132,206,0.4)",
-                strokeColor: "rgba(56,3,57,1)",
-                pointColor: "rgba(56,3,57,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(56,3,57,1)",
-                data: [7, 5, 7, 9, 8, 8, 7]
-            }
-        ]
-    };
-    
-    window.onload = function() {
-        window.myRadar = new Chart(document.getElementById("canvasCM").getContext("2d")).Radar(radarChartData, {
-            responsive: false
-        });
-    }
-</script>
-{% endif %}
+<link href="{{ asset('style/index.css')}}" rel="stylesheet" type="text/css" />
 {% endblock %}
 {% block main %}
 <!-- SLIDER -->
@@ -144,7 +110,7 @@
             <section id="perfil" class="container-fluid">
                 <div class="col-sm-2">
                     <h1>{{app.user}}</h1>
-                    <img width="100" height="100">
+                    <img src="http://lorempixel.com/100/100/people/" width="100" height="100">
                     <p>Registro: <br><label>29/03/2017</label></p>
                     <p>Entrenamientos: <br><label>17</label></p>
                     <div class="area-capacidad">
@@ -236,7 +202,7 @@
                         <h2>Programa básico</h2>
                         <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para la mayoría de usuarios<br><img src="{{ asset('svg/check.svg')}}" class="icon">Mejora tu físico<br><img src="{{ asset('svg/check.svg')}}" class="icon">Gana agilidad mental<br></p>
                     </div>
-                    <img class="imgDer">
+                    <img src="http://lorempixel.com/350/170/sports/1" class="imgDer">
                 </div>
                 <div class="programa">
                     <div class="textDer">
@@ -245,63 +211,63 @@
                         <img src="{{ asset('svg/check.svg')}}" class="icon">30 minutos diarios<br>
                         <img src="{{ asset('svg/check.svg')}}" class="icon">Mejoras notables<br></p>
                     </div>
-                    <img class="imgIzq">
+                    <img src="http://lorempixel.com/350/170/sports/2" class="imgIzq">
                 </div>
                 <div class="programa">
                     <div class="textIzq">
                         <h2>Tercera edad</h2>
                         <p><img src="{{ asset('svg/check.svg')}}" class="icon">Manténgase joven<br><img src="{{ asset('svg/check.svg')}}" class="icon">Previene problemas físicos<br><img src="{{ asset('svg/check.svg')}}" class="icon">Evita enfermedad mental<br></p>
                     </div>
-                    <img class="imgDer">
+                    <img src="http://lorempixel.com/350/170/sports/3" class="imgDer">
                 </div>
                 <div class="programa">
                     <div class="textDer">
                         <h2>Programa 4</h2>
                         <p><img src="{{ asset('svg/check.svg')}}" class="icon">Cbhdisfjdshak<br><img src="{{ asset('svg/check.svg')}}" class="icon">Jkldsahfjsd hdfskfjksdjf <br><img src="{{ asset('svg/check.svg')}}" class="icon">Hdjslhfkjashkfjhaf<br></p>
                     </div>
-                    <img class="imgIzq">
+                    <img src="http://lorempixel.com/350/170/sports/1" class="imgIzq">
                 </div>
             </section>
         </div>
         <div class="col-lg-3 contenedor">
             <h2>Novedades</h2>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>31 Marzo 2017</h2>
                 <p>Rediseñada la portada.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>28 Marzo 2017</h2>
                 <p>Añadidas novedades.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>28 Marzo 2017</h2>
                 <p>Comenzado el proyecto Cuerpo y Mente.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>31 Marzo 2017</h2>
                 <p>Rediseñada la portada.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>28 Marzo 2017</h2>
                 <p>Añadidas novedades.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>28 Marzo 2017</h2>
                 <p>Comenzado el proyecto Cuerpo y Mente.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>28 Marzo 2017</h2>
                 <p>Añadidas novedades.</p>
             </section>
             <section class="novedad">
-                <img>
+                <img src="http://lorempixel.com/40/40/">
                 <h2>28 Marzo 2017</h2>
                 <p>Comenzado el proyecto Cuerpo y Mente.</p>
             </section>

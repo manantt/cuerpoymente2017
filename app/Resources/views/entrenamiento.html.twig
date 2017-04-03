@@ -1,6 +1,108 @@
 {% extends 'base.html.twig' %}
 {% block titulo %}Entrenamiento - CyM{% endblock %}
+{% block scripts %}
+<link href="{{ asset('style/entrenamiento.css')}}" rel="stylesheet" type="text/css" />
+{% endblock %}
 
 {% block main %}
 <h1>Entrenamiento</h1>
+<div class="container-fluid">
+	<div id="ejerciciosFisicos" class="col-lg-6">
+		<h2>Ejercicios físicos</h2>
+		{% for ejercicio in ejerciciosCuerpo %}
+		    <section class="ejercicio">
+		    	<img  src="http://lorempixel.com/60/60/" width="60" height="60">
+		    	<div class="contenidoEjercicio">
+			    	<div class="progresoEjercicio">
+			    	<label class="titulo">{{ ejercicio.nombre }} <span> - {{ejercicio.tipo.nombre}}</span></label><br>
+			    		<label class="nivelEjercicio nivelEjercicioActivo">1</label>
+			    		<label class="nivelEjercicio">2</label>
+			    		<label class="nivelEjercicio">3</label>
+			    		<label class="nivelEjercicio">4</label>
+			    		<label class="nivelEjercicio">5</label>
+			    		<label class="nivelEjercicio">6</label>
+			    		<label class="nivelEjercicio">7</label>
+			    		<label class="nivelEjercicio">8</label>
+			    		<label class="nivelEjercicio">9</label>
+			    		<label class="nivelEjercicio">10</label><br>
+			    		<div class="barEjercicio">
+			    			<div class="progressEjercicio" style="width: 80.5%;"></div>
+			    		</div>
+			    	</div>
+		    	</div>
+		    	<div class="capacidadesEjercicio">
+			    	<p>
+			    		Fuerza: 10<br>
+			    		Resistencia: 5<br>
+			    		Coordinacion: 1<br>
+			    	</p>
+		    	</div>
+		    	<a href="{{ path('entrenamiento', { idEjercicio: ejercicio.id }) }}">></a>
+		    </section>
+		{% endfor %}
+	</div>
+	<div id="ejerciciosMentales" class="col-lg-6">
+		<h2>Ejercicios mentales</h2>
+		{% for ejercicio in ejerciciosMente %}
+		    <section class="ejercicio">
+		    	<img  src="http://lorempixel.com/60/60/" width="60" height="60">
+		    	<div class="contenidoEjercicio">
+			    	<div class="progresoEjercicio">
+			    	<label class="titulo">{{ ejercicio.nombre }} <span> - {{ejercicio.tipo.nombre}}</span></label><br>
+			    		<label class="nivelEjercicio nivelEjercicioActivo">1</label>
+			    		<label class="nivelEjercicio">2</label>
+			    		<label class="nivelEjercicio">3</label>
+			    		<label class="nivelEjercicio">4</label>
+			    		<label class="nivelEjercicio">5</label>
+			    		<label class="nivelEjercicio">6</label>
+			    		<label class="nivelEjercicio">7</label>
+			    		<label class="nivelEjercicio">8</label>
+			    		<label class="nivelEjercicio">9</label>
+			    		<label class="nivelEjercicio">10</label><br>
+			    		<div class="barEjercicio">
+			    			<div class="progressEjercicio" style="width: 80.5%;"></div>
+			    		</div>
+			    	</div>
+		    	</div>
+		    	<div class="capacidadesEjercicio">
+			    	<p>
+			    		<!-- FISICOS -->
+			    		{% if ejercicio.fuerza > 0 %}
+						    Fuerza: {{ ejercicio.fuerza }}<br>
+						{% endif %}
+						{% if ejercicio.velocidad > 0 %}
+						    Velocidad: {{ ejercicio.velocidad }}<br>
+						{% endif %}
+						{% if ejercicio.resistencia > 0 %}
+						    Resistencia: {{ ejercicio.resistencia }}<br>
+						{% endif %}
+						{% if ejercicio.flexibilidad > 0 %}
+						    Flexibilidad: {{ ejercicio.flexibilidad }}<br>
+						{% endif %}
+						{% if ejercicio.coordinacion > 0 %}
+						    Coordinacion: {{ ejercicio.coordinacion }}<br>
+						{% endif %}
+			    		<!-- MENTALES -->
+			    		{% if ejercicio.ejecucion > 0 %}
+						    Ejecución: {{ ejercicio.ejecucion }}<br>
+						{% endif %}
+						{% if ejercicio.atencion > 0 %}
+						    Atención: {{ ejercicio.atencion }}<br>
+						{% endif %}
+						{% if ejercicio.memoria > 0 %}
+						    Memoria: {{ ejercicio.memoria }}<br>
+						{% endif %}
+						{% if ejercicio.percepcionyrapidez > 0 %}
+						    Percepción: {{ ejercicio.percepcionyrapidez }}<br>
+						{% endif %}
+						{% if ejercicio.relajacion > 0 %}
+						    Relajación: {{ ejercicio.relajacion }}<br>
+						{% endif %}
+			    	</p>
+		    	</div>
+		    	<a href="{{ path('entrenamiento', { idEjercicio: ejercicio.id }) }}">></a>
+		    </section>
+		{% endfor %}
+	</div>
+</div>
 {% endblock %}

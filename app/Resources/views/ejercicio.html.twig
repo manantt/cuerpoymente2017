@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+{% block titulo %}Entrenamiento - CyM{% endblock %}
+{% block scripts %}
+<link href="{{ asset('style/ejercicio.css')}}" rel="stylesheet" type="text/css" />
+{% if ejercicio.tipo.id == 1 %}
+    <script type="text/javascript" src="{{ asset('juegos/'~ ejercicio.ruta ~ '/dibujado.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('juegos/'~ ejercicio.ruta ~ '/objetos.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('juegos/'~ ejercicio.ruta ~ '/principal.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('juegos/'~ ejercicio.ruta ~ '/utiles.js')}}"></script>
+	<script>
+		// window.onload = inicio;
+		// function inicio(){
+		// 	loadGame();
+		// }
+		$( document ).ready(function() {
+			loadGame();
+		});
+	</script>
+{% endif %}
+<script src="{{ asset('scripts/Chart.js')}}"></script>
+<script>
+var radarChartData = {
+    {% if ejercicio.seccion.id == 1 %}
+	    labels: ["Fuerza", "Velocidad", "Resistencia", "Flexibilidad", "Coordinación"],
+	{% else %}
+		labels: ["Ejecución", "Atención", "Memoria", "Percepción", "Relajación"],
+	{% endif %}
+
+    datasets: [/*{
+            label: "Máximo",
+            fillColor: "rgba(120,200,0,0.01)",
+            strokeColor: "rgba(120,200,0,1)",
+            pointColor: "rgba(120,200,0,0)",
+            pointStrokeColor: "rgba(120,200,0,0)",
+            pointHighlightFill: "rgba(120,200,0,0)",
+            pointHighlightStroke: "rgba(120,200,0,0)",
+            data: [10, 10, 10, 10, 10]
+        },*/
+        {
+            label: "Capacidades entrenadas",
+            fillColor: "rgba(185,132,206,0.4)",
+            strokeColor: "rgba(56,3,57,1)",
+            pointColor: "rgba(56,3,57,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(56,3,57,1)",
+
+            {% if ejercicio.seccion.id == 1 %}
+			    data: [
+			    	{{ ejercicio.fuerza>0?ejercicio.fuerza:1 }}, 
+			    	{{ ejercicio.velocidad>0?ejercicio.velocidad:1 }}, 
+			    	{{ ejercicio.resistencia>0?ejercicio.resistencia:1 }}, 
+			    	{{ ejercicio.flexibilidad>0?ejercicio.flexibilidad:1 }}, 
+			    	{{ ejercicio.coordinacion>0?ejercicio.coordinacion:1 }}
+			    ]
+			{% else %}
+            	data: [
+			    	{{ ejercicio.ejecucion>0?ejercicio.ejecucion:1 }}, 
+			    	{{ ejercicio.atencion>0?ejercicio.atencion:1 }}, 
+			    	{{ ejercicio.memoria>0?ejercicio.memoria:1 }}, 
+			    	{{ ejercicio.percepcionyrapidez>0?ejercicio.percepcionyrapidez:1 }}, 
+			    	{{ ejercicio.relajacion>0?ejercicio.relajacion:1 }}
+			    ]
+			{% endif %}
+        }
+    ]
+};
+
+window.onload = function() {
+    window.myRadar = new Chart(document.getElementById("canvasGrafica").getContext("2d")).Radar(radarChartData, {
+        responsive: false
+    });
+}
+</script>
+{% endblock %}
+
+{% block main %}
+<h1>{{ ejercicio.nombre }}</h1>
+<div class="container-fluid">
+	<div class="col-lg-6">	
+		<h2>Cómo se realiza</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<h2>Para qué sirve</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<canvas id="canvasGrafica" width="300" height="300">Su navegador no soporta canvas</canvas>
+	</div>
+	<div class="col-lg-6">	
+		<h2>Realizar</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.</p>
+		{% if ejercicio.tipo.id == 2 %}
+		    <iframe src="https://www.youtube.com/embed/{{ ejercicio.ruta }}"></iframe>
+		{% else %}
+        	<canvas id="canvas">Su navegador no soporta canvas</canvas>
+		{% endif %}
+		
+	</div>
+</div>
+{% endblock %}

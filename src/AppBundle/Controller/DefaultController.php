@@ -38,14 +38,34 @@ class DefaultController extends Controller
 			return $this->redirect("/login", 301);
     }
     /**
-     * @Route("/entrenamiento", name="entrenamiento")
+     * @Route("/entrenamiento/{idEjercicio}", name="entrenamiento")
      */
-    public function entrenamientoAction(Request $request)
+    public function entrenamientoAction(Request $request, $idEjercicio = "")
     {
-		if($this->getUser())
-			return $this->render('entrenamiento.html.twig');
-		else
+		//no está logueado
+		if(!$this->getUser())
 			return $this->redirect("/login", 301);
+
+		$em = $this->getDoctrine()->getManager();
+		//Ficha ejercicio
+		$ejercicio = $em->getRepository('AppBundle:Ejercicio')->findOneBy(array('id' => $idEjercicio));
+		if($idEjercicio != ""){
+			return $this->render('ejercicio.html.twig', array(
+			'ejercicio' => $ejercicio,
+			/*'padre' => $padre,*/
+			)
+		);
+		}
+		//lista ejercicios
+		$ejerciciosCuerpo = $em->getRepository('AppBundle:Ejercicio')->findBy(array('seccion' => 1));
+		$ejerciciosMente = $em->getRepository('AppBundle:Ejercicio')->findBy(array('seccion' => 2));
+		return $this->render('entrenamiento.html.twig', array(
+			'ejerciciosCuerpo' => $ejerciciosCuerpo,
+			'ejerciciosMente' => $ejerciciosMente,
+			)
+		);
+		
+			
     }
     /**
      * @Route("/tienda", name="tienda")
@@ -53,62 +73,6 @@ class DefaultController extends Controller
     public function tiendaAction(Request $request)
     {
 		return $this->render('tienda.html.twig');
-    }
-    /**
-     * @Route("/categoria/{idCategoria}/{pag}/", name="categoria")
-     */
-    public function categoriaAction($idCategoria, $pag, Request $request)
-    {
-        $this->get('miservicio.contadorvisitas')->nuevaVisita();
-        
-        $fichasPorPagina = 10;
-        $addCoockie = false;
-        if($request->cookies->has('fichasPorPagina'))
-        	$fichasPorPagina = $request->cookies->get('fichasPorPagina');
-        if($request->request->has('paginacion')){
-        	$addCoockie = true;
-        	$fichasPorPagina = $request->request->get('paginacion');
-        }
-
-        $em = $this->getDoctrine()->getManager();
-		$categorias = $em->getRepository('AppBundle:Categoria')->findBy(array('idPadre' => NULL));
-		$fichas = $em->getRepository('AppBundle:Ficha')->findBy(
-			array('categoria' => $idCategoria),
-			array('tipoFicha' => 'ASC'),
-			$fichasPorPagina,
-			($pag-1)*10
-		);
-		
-		$response = $this->render('categoria.html.twig', array(
-				'categorias' => $categorias,
-				'fichas' => $fichas,
-				'idCategoria' => $idCategoria,
-				'pagina' => $pag,
-				'fichasPorPagina' => $fichasPorPagina,
-			'visitas' => $this->get('miservicio.contadorvisitas')->getVisitas()
-			)
-		);
-		if($addCoockie){
-			$response->headers->setCookie(new Cookie("fichasPorPagina", $request->request->get('paginacion')));
-		}
-		return $response;
-    }
-    /**
-     * @Route("/ficha/{idFicha}", name="ficha")
-     */
-    public function fichaAction($idFicha)
-    {
-        $this->get('miservicio.contadorvisitas')->nuevaVisita();
-        
-        $em = $this->getDoctrine()->getManager();
-		$categorias = $em->getRepository('AppBundle:Categoria')->findBy(array('idPadre' => NULL));
-		$ficha = $em->getRepository('AppBundle:Ficha')->findOneBy(array('id' => $idFicha));
-		
-		return $this->render('ficha.html.twig', array(
-			'categorias' => $categorias,
-			'ficha' => $ficha,
-			'visitas' => $this->get('miservicio.contadorvisitas')->getVisitas()
-		));
     }
 	/**
 	* @Route("/logdout", name="usuario_logout")

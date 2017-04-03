@@ -1,8 +1,4 @@
 ﻿main {
-	grid-row: 2 / 3;
-	display: grid;
-	grid-template-columns: 33% auto 33%;
-    grid-template-rows: 190px auto;
 	margin: 30px 10px;
 }
 main #sliderSection { /*slider*/

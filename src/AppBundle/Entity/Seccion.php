@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
 * @ORM\Entity
 */
-class Categoria
+class Seccion
 {
 	/** 
 	 * @ORM\Id
@@ -16,10 +16,10 @@ class Categoria
 	protected $id; 
 
 	/** @ORM\Column(type="string", length=100) */
-	protected $nombre; 
+    protected $nombre; 
 
-	/** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categoria") */
-	protected $idPadre;
+    /** @ORM\Column(type="string", length=100) */
+    protected $descripcion; 
 
     /**
      * Get id
@@ -36,7 +36,7 @@ class Categoria
      *
      * @param string $nombre
      *
-     * @return Categoria
+     * @return Seccion
      */
     public function setNombre($nombre)
     {
@@ -56,40 +56,35 @@ class Categoria
     }
 
     /**
-     * Set idPadre
+     * Set descripcion
      *
-     * @param \AppBundle\Entity\Categoria $idPadre
+     * @param string $descripcion
      *
-     * @return Categoria
+     * @return Seccion
      */
-    public function setIdPadre(\AppBundle\Entity\Categoria $idPadre = null)
+    public function setDescripcion($descripcion)
     {
-        $this->idPadre = $idPadre;
+        $this->descripcion = $descripcion;
 
         return $this;
     }
 
     /**
-     * Get idPadre
+     * Get descripcion
      *
-     * @return \AppBundle\Entity\Categoria
+     * @return string
      */
-    public function getIdPadre()
+    public function getDescripcion()
     {
-        return $this->idPadre;
+        return $this->descripcion;
     }
-
-    public function __toString()
-	{
-		return $this->getNombre();
-	}
 
     /**
      * Set id
      *
      * @param integer $id
      *
-     * @return Categoria
+     * @return Seccion
      */
     public function setId($id)
     {

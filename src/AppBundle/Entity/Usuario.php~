@@ -2,12 +2,13 @@
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
 * @ORM\Entity
 */
-class Usuario
+class Usuario extends BaseUser
 {
 	/** 
 	 * @ORM\Id
@@ -15,12 +16,6 @@ class Usuario
 	 * @ORM\GeneratedValue
 	 */
 	protected $id; 
-
-	/** @ORM\Column(type="string", length=100) */
-	protected $nombre; 
-
-	/** @ORM\Column(type="string", length=100) */
-	protected $clave; 
 
     /**
      * Get id
@@ -30,58 +25,5 @@ class Usuario
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     *
-     * @return Usuario
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set clave
-     *
-     * @param string $clave
-     *
-     * @return Usuario
-     */
-    public function setClave($clave)
-    {
-        $this->clave = $clave;
-
-        return $this;
-    }
-
-    /**
-     * Get clave
-     *
-     * @return string
-     */
-    public function getClave()
-    {
-        return $this->clave;
-    }
-
-    public function __toString()
-    {
-    	return $this->getNombre();
     }
 }
