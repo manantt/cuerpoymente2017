@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \DateTime;
 
 /**
 * @ORM\Entity
@@ -12,26 +13,21 @@ class Puntuacion
 	/** 
 	 * @ORM\Id
 	 * @ORM\Column(type="integer", length=11)
-     * ORM\GeneratedValue
+     * @ORM\GeneratedValue
 	 */
 	protected $id; 
 
 	/** @ORM\Column(type="integer", length=20) */
     protected $puntuacion; 
 
-	/** @ORM\ManyToMany(targetEntity="AppBundle\Entity\Ejercicio") */
+    /** @ORM\Column(type="datetime") */
+    protected $fecha; 
+
+	/** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Ejercicio") */
     protected $idEjercicio;
 
-    /** @ORM\ManyToMany(targetEntity="AppBundle\Entity\Usuario") */
+    /** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Usuario") */
     protected $idUsuario;
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idEjercicio = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->idUsuario = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set id
@@ -82,33 +78,23 @@ class Puntuacion
     }
 
     /**
-     * Add idEjercicio
+     * Set idEjercicio
      *
      * @param \AppBundle\Entity\Ejercicio $idEjercicio
      *
      * @return Puntuacion
      */
-    public function addIdEjercicio(\AppBundle\Entity\Ejercicio $idEjercicio)
+    public function setIdEjercicio(\AppBundle\Entity\Ejercicio $idEjercicio = null)
     {
-        $this->idEjercicio[] = $idEjercicio;
+        $this->idEjercicio = $idEjercicio;
 
         return $this;
     }
 
     /**
-     * Remove idEjercicio
-     *
-     * @param \AppBundle\Entity\Ejercicio $idEjercicio
-     */
-    public function removeIdEjercicio(\AppBundle\Entity\Ejercicio $idEjercicio)
-    {
-        $this->idEjercicio->removeElement($idEjercicio);
-    }
-
-    /**
      * Get idEjercicio
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \AppBundle\Entity\Ejercicio
      */
     public function getIdEjercicio()
     {
@@ -116,36 +102,41 @@ class Puntuacion
     }
 
     /**
-     * Add idUsuario
+     * Set idUsuario
      *
      * @param \AppBundle\Entity\Usuario $idUsuario
      *
      * @return Puntuacion
      */
-    public function addIdUsuario(\AppBundle\Entity\Usuario $idUsuario)
+    public function setIdUsuario(\AppBundle\Entity\Usuario $idUsuario = null)
     {
-        $this->idUsuario[] = $idUsuario;
+        $this->idUsuario = $idUsuario;
 
         return $this;
     }
 
     /**
-     * Remove idUsuario
-     *
-     * @param \AppBundle\Entity\Usuario $idUsuario
-     */
-    public function removeIdUsuario(\AppBundle\Entity\Usuario $idUsuario)
-    {
-        $this->idUsuario->removeElement($idUsuario);
-    }
-
-    /**
      * Get idUsuario
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \AppBundle\Entity\Usuario
      */
     public function getIdUsuario()
     {
         return $this->idUsuario;
+    }
+
+    /**
+     * Get fecha
+     *
+     * @return datetime
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    public function __construct()
+    {
+        $this->fecha = new DateTime(); 
     }
 }

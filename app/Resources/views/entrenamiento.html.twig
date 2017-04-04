@@ -32,9 +32,22 @@
 		    	</div>
 		    	<div class="capacidadesEjercicio">
 			    	<p>
-			    		Fuerza: 10<br>
-			    		Resistencia: 5<br>
-			    		Coordinacion: 1<br>
+			    		<!-- FISICOS -->
+			    		{% if ejercicio.fuerza > 0 %}
+						    Fuerza: {{ ejercicio.fuerza }}<br>
+						{% endif %}
+						{% if ejercicio.velocidad > 0 %}
+						    Velocidad: {{ ejercicio.velocidad }}<br>
+						{% endif %}
+						{% if ejercicio.resistencia > 0 %}
+						    Resistencia: {{ ejercicio.resistencia }}<br>
+						{% endif %}
+						{% if ejercicio.flexibilidad > 0 %}
+						    Flexibilidad: {{ ejercicio.flexibilidad }}<br>
+						{% endif %}
+						{% if ejercicio.coordinacion > 0 %}
+						    Coordinacion: {{ ejercicio.coordinacion }}<br>
+						{% endif %}
 			    	</p>
 		    	</div>
 		    	<a href="{{ path('entrenamiento', { idEjercicio: ejercicio.id }) }}">></a>
@@ -66,22 +79,6 @@
 		    	</div>
 		    	<div class="capacidadesEjercicio">
 			    	<p>
-			    		<!-- FISICOS -->
-			    		{% if ejercicio.fuerza > 0 %}
-						    Fuerza: {{ ejercicio.fuerza }}<br>
-						{% endif %}
-						{% if ejercicio.velocidad > 0 %}
-						    Velocidad: {{ ejercicio.velocidad }}<br>
-						{% endif %}
-						{% if ejercicio.resistencia > 0 %}
-						    Resistencia: {{ ejercicio.resistencia }}<br>
-						{% endif %}
-						{% if ejercicio.flexibilidad > 0 %}
-						    Flexibilidad: {{ ejercicio.flexibilidad }}<br>
-						{% endif %}
-						{% if ejercicio.coordinacion > 0 %}
-						    Coordinacion: {{ ejercicio.coordinacion }}<br>
-						{% endif %}
 			    		<!-- MENTALES -->
 			    		{% if ejercicio.ejecucion > 0 %}
 						    Ejecución: {{ ejercicio.ejecucion }}<br>

@@ -22,43 +22,6 @@
     {% block scripts %}{% endblock %}
 </head>
 <body>
-    <!-- PopUp Registro -->
-    <div id="registroPopUp" class="modal">
-        <!-- Registro contenido -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <!--<form name="registroForm" method="post" action="/register" enctype="application/x-www-form-urlencoded">
-                
-                <label for="nombreU">Nombre</label>
-                <input type="text" name="sonata_user_registration_form[username]" id="nombreU" value="" required />
-                <br /><br />
-                <label for="email">Email</label>
-                <input type="email" name="sonata_user_registration_form[email]" id="email" value="" required />
-                <br /><br />
-                <label for="clave">Clave</label>
-                <input type="password" name="sonata_user_registration_form[plainPassword][first]" id="clave" value="" required />
-                <br /><br />
-                <label for="rep">Repetir clave</label>
-                <input type="password" name="sonata_user_registration_form[plainPassword][second]" id="rep" value="" required />
-                <br /><br />
-                <input class="enviar" type="submit" name="enviarRegistro" value="Enviar" />
-            </form>-->
-
-            <form action="/register/"  method="POST" class="fos_user_registration_register form-horizontal">
-				<h1>Crea tu cuenta</h1><br>
-				<div id="sonata_user_registration_form">
-					<div><label for="sonata_user_registration_form_username" class="required">Nombre</label><input type="text" id="sonata_user_registration_form_username" name="sonata_user_registration_form[username]" required="required" maxlength="255" pattern=".{2,}" /></div>
-					<div><label for="sonata_user_registration_form_email" class="required">Email</label><input type="email" id="sonata_user_registration_form_email" name="sonata_user_registration_form[email]" required="required" /></div>
-					<div><label for="sonata_user_registration_form_plainPassword_first" class="required">Contraseña</label><input type="password" id="sonata_user_registration_form_plainPassword_first" name="sonata_user_registration_form[plainPassword][first]" required="required" /></div>
-					<div><label for="sonata_user_registration_form_plainPassword_second" class="required">Confirmar contraseña</label><input type="password" id="sonata_user_registration_form_plainPassword_second" name="sonata_user_registration_form[plainPassword][second]" required="required" /></div>
-					<input type="hidden" id="sonata_user_registration_form__token" name="sonata_user_registration_form[_token]" value="uLUttCCxWJicSB0p989WqyYYhAwxBncqTn__enxoO4k" />
-				</div>
-				<div class="form-actions">
-					<input type="submit" value="Registrar" class="btn btn-success pull-right" />
-				</div>
-			</form>
-        </div>
-    </div>
     <header class="container-fluid">
         <!--Menu secundario-->
         <div id="menuSec" class="row">
@@ -70,9 +33,9 @@
             <div id="menuSec3" class="col-lg-4">
                 
 				{% if app.user == "" %}
-				    <label id="registro">Crear cuenta</label>
+				    <a href="/register">Crear cuenta</a>
 				{% else %}
-				    <a href="../logout" id="logout">Cerrar sesion</a>
+				    <a href="/logout" id="logout">Cerrar sesion</a>
 				{% endif %}
             </div>
         </div>

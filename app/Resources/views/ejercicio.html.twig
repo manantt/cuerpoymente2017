@@ -47,19 +47,19 @@ var radarChartData = {
 
             {% if ejercicio.seccion.id == 1 %}
 			    data: [
-			    	{{ ejercicio.fuerza>0?ejercicio.fuerza:1 }}, 
-			    	{{ ejercicio.velocidad>0?ejercicio.velocidad:1 }}, 
-			    	{{ ejercicio.resistencia>0?ejercicio.resistencia:1 }}, 
-			    	{{ ejercicio.flexibilidad>0?ejercicio.flexibilidad:1 }}, 
-			    	{{ ejercicio.coordinacion>0?ejercicio.coordinacion:1 }}
+			    	{{ ejercicio.fuerza }}, 
+			    	{{ ejercicio.velocidad }}, 
+			    	{{ ejercicio.resistencia }}, 
+			    	{{ ejercicio.flexibilidad }}, 
+			    	{{ ejercicio.coordinacion }}
 			    ]
 			{% else %}
             	data: [
-			    	{{ ejercicio.ejecucion>0?ejercicio.ejecucion:1 }}, 
-			    	{{ ejercicio.atencion>0?ejercicio.atencion:1 }}, 
-			    	{{ ejercicio.memoria>0?ejercicio.memoria:1 }}, 
-			    	{{ ejercicio.percepcionyrapidez>0?ejercicio.percepcionyrapidez:1 }}, 
-			    	{{ ejercicio.relajacion>0?ejercicio.relajacion:1 }}
+			    	{{ ejercicio.ejecucion }}, 
+			    	{{ ejercicio.atencion }}, 
+			    	{{ ejercicio.memoria }}, 
+			    	{{ ejercicio.percepcionyrapidez }}, 
+			    	{{ ejercicio.relajacion }}
 			    ]
 			{% endif %}
         }
@@ -77,7 +77,7 @@ window.onload = function() {
 {% block main %}
 <h1>{{ ejercicio.nombre }}</h1>
 <div class="container-fluid">
-	<div class="col-lg-6">	
+	<div class="col-lg-5">	
 		<h2>Cómo se realiza</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -94,12 +94,13 @@ window.onload = function() {
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		<canvas id="canvasGrafica" width="300" height="300">Su navegador no soporta canvas</canvas>
 	</div>
-	<div class="col-lg-6">	
+	<div class="col-lg-7">	
 		<h2>Realizar</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua.</p>
 		{% if ejercicio.tipo.id == 2 %}
 		    <iframe src="https://www.youtube.com/embed/{{ ejercicio.ruta }}"></iframe>
+		    <a class="botonRealizar" href="/?id={{ ejercicio.id }}&puntuacion=1">He realizado este ejercicio</a>
 		{% else %}
         	<canvas id="canvas">Su navegador no soporta canvas</canvas>
 		{% endif %}

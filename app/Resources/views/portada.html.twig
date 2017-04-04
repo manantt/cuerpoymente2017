@@ -19,7 +19,11 @@
                 <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
             </div>
             <div id="banner3">
-                <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
+                <br><br>
+                <blockquote>
+                    <p>El verdadero gozo viene de la actividad de la mente y el ejercicio del cuerpo, los dos van unidos.</p>
+                    <small>Frase célebre de <cite title="Nombre Apellidos">Alexander von Humboldt</cite></small>
+                </blockquote>
             </div>
             <div id="banner4">
                 <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
@@ -40,56 +44,15 @@
                             <th>Puntuación</th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>#1</td>
-                        <td>Manuel Anttuán</td>
-                        <td>234</td>
-                    </tr>
-                    <tr>
-                        <td>#2</td>
-                        <td>Daniel Count</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#3</td>
-                        <td>Elisa Elle</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#4</td>
-                        <td>Juan Canto</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#5</td>
-                        <td>Ester de Diego</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#6</td>
-                        <td>Pablo Pelota</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#7</td>
-                        <td>Alejandro García</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#8</td>
-                        <td>ProOne</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#9</td>
-                        <td>Prueba</td>
-                        <td>230</td>
-                    </tr>
-                    <tr>
-                        <td>#10</td>
-                        <td>César Álvarez</td>
-                        <td>230</td>
-                    </tr>
+                    {% set contador = 1 %} 
+                    {% for nombre, puntuacion in top10 %}
+                        <tr>
+                            <td>#{{contador}}</td>
+                            <td>{{nombre}}</td>
+                            <td>{{puntuacion}}</td>
+                        </tr>
+                        {% set contador = contador + 1 %}
+                    {% endfor %}
                 </table>
             </section>
         </div>
@@ -101,8 +64,8 @@
                     Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
                     forma mediante el entrenamiento cerebral, el control del estrés y el ejercicio físico.
                 </p>
-                <img src="" width="100" height="100">
-                <a>REGÍSTRATE AHORA</a>
+                <img src="http://lorempixel.com/350/170/nature/4/" width="100" height="100">
+                <a href="/register">REGÍSTRATE AHORA</a>
                 <div class="clear"/><br>
                 <p>Consulta tu gráfica de progreso y mejora de una forma equilibrada tus capacidades físicas y mentales.</p>
             </section>
@@ -114,9 +77,9 @@
                     <p>Registro: <br><label>29/03/2017</label></p>
                     <p>Entrenamientos: <br><label>17</label></p>
                     <div class="area-capacidad">
-                        <span class="area">Puntuación</span> <span class="puntuacion">1768</span>
+                        <span class="area">Puntuación</span> <span class="puntuacion">{{ total }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeTotal }}%;"></div>
                         </div>
                     </div>
                     <h3>¡Por encima del <span>92%</span> de los usuarios!</h3>
@@ -124,33 +87,33 @@
                 <div class="col-sm-5">
                     <h2>Capacidades mentales</h2>
                     <div class="area-capacidad">
-                        <span class="area">Funciones ejecutivas</span> <span class="puntuacion">1768</span>
+                        <span class="area">Funciones ejecutivas</span> <span class="puntuacion">{{ ejecucion }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeEjecucion }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Antención</span> <span class="puntuacion">1768</span>
+                        <span class="area">Antención</span> <span class="puntuacion">{{ atencion }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeAtencion }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Memoria</span> <span class="puntuacion">1768</span>
+                        <span class="area">Memoria</span> <span class="puntuacion">{{ memoria }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeMemoria }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Percepción y rapidez</span> <span class="puntuacion">1768</span>
+                        <span class="area">Percepción y rapidez</span> <span class="puntuacion">{{ percepcion }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajePercepcion }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Relajación</span> <span class="puntuacion">1768</span>
+                        <span class="area">Relajación</span> <span class="puntuacion">{{ relajacion }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeRelajacion }}%;"></div>
                         </div>
                     </div>
                     <!-- <canvas id="canvasCM" height="300" width="300"></canvas> -->
@@ -158,33 +121,33 @@
                 <div class="col-sm-5">
                     <h2>Capacidades físicas</h2>
                     <div class="area-capacidad">
-                        <span class="area">Fuerza</span> <span class="puntuacion">1768</span>
+                        <span class="area">Fuerza</span> <span class="puntuacion">{{ fuerza }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeFuerza }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Resistencia</span> <span class="puntuacion">1768</span>
+                        <span class="area">Resistencia</span> <span class="puntuacion">{{ resistencia }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeResistencia }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Velocidad</span> <span class="puntuacion">1768</span>
+                        <span class="area">Velocidad</span> <span class="puntuacion">{{ velocidad }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeVelocidad }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Coordinación</span> <span class="puntuacion">1768</span>
+                        <span class="area">Coordinación</span> <span class="puntuacion">{{ coordinacion }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeCoordinacion }}%;"></div>
                         </div>
                     </div>
                     <div class="area-capacidad">
-                        <span class="area">Flexibilidad</span> <span class="puntuacion">1768</span>
+                        <span class="area">Flexibilidad</span> <span class="puntuacion">{{ flexibilidad }}</span>
                         <div class="progress">
-                            <div class="bar" style="width: 91.163887421123%;"></div>
+                            <div class="bar" style="width: {{ porcentajeFlexibilidad }}%;"></div>
                         </div>
                     </div>
                 </div>

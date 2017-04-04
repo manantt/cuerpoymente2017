@@ -21,7 +21,7 @@ function iniciar(reset) {/*reset indica si es un reinicio o si es un nuevo nivel
         puntuacion = 0;
         tMapaX = tPantallaX; //ajusta el mapa segun el tamaño del canvas
         tMapaY = tPantallaY;
-        tiemp = 3600;
+        tiemp = 360;
         Personaje.x = 0; //mueve al personaje a su posicion de inicio
         Personaje.y = 0;
         Personaje.objX = 0;
@@ -79,9 +79,11 @@ function bucle() {
             paint(); //repinta todos los objetos
         } else {
             if (!redirigiendo) {/*fin del juego*/
-                //window.location.replace("guardar.php?ejecucion=3&atencion=2&memoria=1&enviarSave&idGame=1&puntuacion=" + puntuacion);
                 pintaFin();
                 redirigiendo = true;
+                setTimeout(function() {//redirige tras 2s
+                    window.location.replace("/?id=4&puntuacion="+puntuacion);
+                }, 2000);
             }
             clearInterval(i);
         }

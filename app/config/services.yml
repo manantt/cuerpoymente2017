@@ -22,6 +22,5 @@ services:
         arguments: [~, AppBundle\Entity\Ficha, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Ficha }
-    miservicio.contadorvisitas:
-        class: AppBundle\Util\ContadorVisitas
-        arguments: ['/visitas.log']
+    miservicio.estadisticas:
+        class: AppBundle\Util\Estadisticas
