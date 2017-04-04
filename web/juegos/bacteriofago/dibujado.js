@@ -11,7 +11,7 @@ var mousey = 10;
 function paint() { 
     ctx.clearRect(0, 0, 2000, 2000);//limpia el canvas
 	pintaGRojos();
-    drawBacteria(ctx, mousex, mousey, 10, 99, true);
+    //drawBacteria(ctx, mousex, mousey, 10, 99, true);
 	//Personaje.paint();
 	ctx.fillStyle = "#f00";
     ctx.font = 'bold 40px Gloria Hallelujah';

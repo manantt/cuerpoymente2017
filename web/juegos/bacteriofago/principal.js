@@ -81,11 +81,11 @@ function bucle() {
             if (!redirigiendo) {/*fin del juego*/
                 pintaFin();
                 redirigiendo = true;
-                setTimeout(function() {//redirige tras 2s
+                setTimeout(function() {//redirige tras unos segundos
                     window.location.replace("/?id=4&puntuacion="+puntuacion);
-                }, 2000);
+                }, 1500);
             }
-            clearInterval(i);
+            clearInterval(i);//termina el bucle de juego
         }
     }
 }
