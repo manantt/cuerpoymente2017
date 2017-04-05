@@ -107,4 +107,11 @@ class Estadisticas
 		$usuariosPuntuaciones = array_slice($usuariosPuntuaciones, 0, 10);//me quedo con los primeros 10 elementos
 		return $usuariosPuntuaciones;
 	}
+	/**
+	 * Devuelve el número de ejercicios que ha completado el usuario
+	 */
+	public function getNumEjercicios($em, $usuario){
+		$ejercicios = $em->getRepository('AppBundle:Puntuacion')->findBy(array('idUsuario' => $usuario));//todos los ejercicios de un usuario
+		return sizeof($ejercicios);
+	}
 } 

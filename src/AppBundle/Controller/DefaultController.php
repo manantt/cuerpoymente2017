@@ -75,14 +75,18 @@ class DefaultController extends Controller
     	$porcentajeFlexibilidad = $maxFlexibilidad > 0 ?  ($miFlexibilidad * 100) / $maxFlexibilidad : 0;
     	$porcentajeCoordinacion = $maxCoordinacion > 0 ?  ($miCoordinacion * 100) / $maxCoordinacion : 0;
     	
+    	/* TOP10 */
+    	$top10 = $this->get('miservicio.estadisticas')->getTop10($em);
+    	
+    	$top1 = array_values($top10)[0];
+
     	/* Total */
     	$miPuntuacion = $miEjecucion + $miAtencion + $miMemoria + $miPercepcion + $miRelajacion + 
     		$miFuerza + $miVelocidad + $miResistencia + $miFlexibilidad + $miCoordinacion;
 
-    	$porcenjajePuntuacion = 50;
-
-    	/* TOP10 */
-    	$top10 = $this->get('miservicio.estadisticas')->getTop10($em);
+    	$porcenjajePuntuacion = $top1 > 0 ? ($miPuntuacion * 100 ) / $top1 : 0;
+    	$numEjercicios = $this->get('miservicio.estadisticas')->getNumEjercicios($em, $usuarioActual);
+    	 
 
 		return $this->render('portada.html.twig', array(
 				//mentales
@@ -111,6 +115,7 @@ class DefaultController extends Controller
 				'total' => $miPuntuacion,
 				'porcentajeTotal' => $porcenjajePuntuacion,
 				'top10' => $top10,
+				'numEjercicios' => $numEjercicios,
 			)
 		);
     }

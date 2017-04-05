@@ -75,14 +75,14 @@
                     <h1>{{app.user}}</h1>
                     <img src="http://lorempixel.com/100/100/people/" width="100" height="100">
                     <p>Registro: <br><label>29/03/2017</label></p>
-                    <p>Entrenamientos: <br><label>17</label></p>
+                    <p>Entrenamientos: <br><label>{{ numEjercicios }}</label></p>
                     <div class="area-capacidad">
                         <span class="area">Puntuación</span> <span class="puntuacion">{{ total }}</span>
                         <div class="progress">
                             <div class="bar" style="width: {{ porcentajeTotal }}%;"></div>
                         </div>
                     </div>
-                    <h3>¡Por encima del <span>92%</span> de los usuarios!</h3>
+                    <h3>¡Por encima del <span>{{ porcentajeTotal }}%</span> de los usuarios!</h3>
                 </div>
                 <div class="col-sm-5">
                     <h2>Capacidades mentales</h2>
