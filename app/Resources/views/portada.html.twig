@@ -163,30 +163,32 @@
                 <div class="programa">
                     <div class="textIzq">
                         <h2>Programa básico</h2>
-                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para la mayoría de usuarios<br><img src="{{ asset('svg/check.svg')}}" class="icon">Mejora tu físico<br><img src="{{ asset('svg/check.svg')}}" class="icon">Gana agilidad mental<br></p>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para cualquier usuarios<br><img src="{{ asset('svg/check.svg')}}" class="icon">Mejora tu físico<br><img src="{{ asset('svg/check.svg')}}" class="icon">Gana agilidad mental<br></p>
                     </div>
                     <img src="http://lorempixel.com/350/170/sports/1" class="imgDer">
                 </div>
                 <div class="programa">
                     <div class="textDer">
-                        <h2>Programa 30'</h2>
-                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para personas con poco tiempo<br>
-                        <img src="{{ asset('svg/check.svg')}}" class="icon">30 minutos diarios<br>
-                        <img src="{{ asset('svg/check.svg')}}" class="icon">Mejoras notables<br></p>
+                        <h2>Infantil</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">De 3 a 6 años<br>
+                        <img src="{{ asset('svg/check.svg')}}" class="icon">Mejora el potencial de los niños<br>
+                        <img src="{{ asset('svg/check.svg')}}" class="icon">Fortalece huesos y músculos<br></p>
                     </div>
                     <img src="http://lorempixel.com/350/170/sports/2" class="imgIzq">
                 </div>
                 <div class="programa">
                     <div class="textIzq">
-                        <h2>Tercera edad</h2>
-                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Manténgase joven<br><img src="{{ asset('svg/check.svg')}}" class="icon">Previene problemas físicos<br><img src="{{ asset('svg/check.svg')}}" class="icon">Evita enfermedad mental<br></p>
+                        <h2>Programa 30'</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para personas con poco tiempo<br>
+                        <img src="{{ asset('svg/check.svg')}}" class="icon">30 minutos diarios<br>
+                        <img src="{{ asset('svg/check.svg')}}" class="icon">Mejoras notables<br></p>
                     </div>
                     <img src="http://lorempixel.com/350/170/sports/3" class="imgDer">
                 </div>
                 <div class="programa">
                     <div class="textDer">
-                        <h2>Programa 4</h2>
-                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Cbhdisfjdshak<br><img src="{{ asset('svg/check.svg')}}" class="icon">Jkldsahfjsd hdfskfjksdjf <br><img src="{{ asset('svg/check.svg')}}" class="icon">Hdjslhfkjashkfjhaf<br></p>
+                        <h2>Edad avanzada</h2>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">Manténgase joven<br><img src="{{ asset('svg/check.svg')}}" class="icon">Previene problemas físicos<br><img src="{{ asset('svg/check.svg')}}" class="icon">Evita enfermedad mental<br></p>
                     </div>
                     <img src="http://lorempixel.com/350/170/sports/1" class="imgIzq">
                 </div>
@@ -194,46 +196,26 @@
         </div>
         <div class="col-lg-3 contenedor">
             <h2>Novedades</h2>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>31 Marzo 2017</h2>
-                <p>Rediseñada la portada.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>28 Marzo 2017</h2>
-                <p>Añadidas novedades.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>28 Marzo 2017</h2>
-                <p>Comenzado el proyecto Cuerpo y Mente.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>31 Marzo 2017</h2>
-                <p>Rediseñada la portada.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>28 Marzo 2017</h2>
-                <p>Añadidas novedades.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>28 Marzo 2017</h2>
-                <p>Comenzado el proyecto Cuerpo y Mente.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>28 Marzo 2017</h2>
-                <p>Añadidas novedades.</p>
-            </section>
-            <section class="novedad">
-                <img src="http://lorempixel.com/40/40/">
-                <h2>28 Marzo 2017</h2>
-                <p>Comenzado el proyecto Cuerpo y Mente.</p>
-            </section>
+            {% for novedad in novedades %}
+                <section class="novedad">
+                    <img src="http://lorempixel.com/40/40/">
+                    <h2>{{ novedad.fecha|date('\d F, Y')|replace({
+                      'January'  : 'Enero',
+                      'February'  : 'Febrero',
+                      'March'  : 'Marzo',
+                      'April'  : 'Abril',
+                      'May'  : 'Mayo',
+                      'June'  : 'Junio',
+                      'July'  : 'Julio',
+                      'August'  : 'Agosto',
+                      'September'  : 'Septiembre',
+                      'October'  : 'Octubre',
+                      'November'  : 'Noviembre',
+                      'December' : 'Diciembre'
+                    }) }}</h2>
+                    <p>{{ novedad.contenido }}</p>
+                </section>
+            {% endfor %}
         </div>
     </div>
 </div>

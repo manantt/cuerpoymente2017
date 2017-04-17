@@ -19,7 +19,21 @@ class TipoEjercicios
     protected $nombre; 
 
     /** @ORM\Column(type="string", length=100) */
-    protected $descripcion; 
+    protected $descripcion;
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return TipoEjercicios
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -32,27 +46,27 @@ class TipoEjercicios
     }
 
     /**
-     * Set nombre
+     * Set fecha
      *
-     * @param string $nombre
+     * @param string $fecha
      *
      * @return TipoEjercicios
      */
-    public function setNombre($nombre)
+    public function setFecha($fecha)
     {
-        $this->nombre = $nombre;
+        $this->fecha = $fecha;
 
         return $this;
     }
 
     /**
-     * Get nombre
+     * Get fecha
      *
      * @return string
      */
-    public function getNombre()
+    public function getFecha()
     {
-        return $this->nombre;
+        return $this->fecha;
     }
 
     /**
@@ -77,19 +91,5 @@ class TipoEjercicios
     public function getDescripcion()
     {
         return $this->descripcion;
-    }
-
-    /**
-     * Set id
-     *
-     * @param integer $id
-     *
-     * @return TipoEjercicios
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
     }
 }

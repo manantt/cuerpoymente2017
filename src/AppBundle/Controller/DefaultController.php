@@ -86,7 +86,11 @@ class DefaultController extends Controller
 
     	$porcenjajePuntuacion = number_format($top1 > 0 ? ($miPuntuacion * 100 ) / $top1 : 0, 0, '.', ',');
     	$numEjercicios = $this->get('miservicio.estadisticas')->getNumEjercicios($em, $usuarioActual);
-
+    	/* Novedades */
+    	$novedades = $em->getRepository('AppBundle:Novedad')->findBy(
+    		array(),
+    		array('fecha' => 'ASC')
+    	); 
 		return $this->render('portada.html.twig', array(
 				//mentales
 				'ejecucion' => $miEjecucion,
@@ -115,6 +119,8 @@ class DefaultController extends Controller
 				'porcentajeTotal' => $porcenjajePuntuacion,
 				'top10' => $top10,
 				'numEjercicios' => $numEjercicios,
+				//novedades
+				'novedades' => $novedades,
 			)
 		);
     }

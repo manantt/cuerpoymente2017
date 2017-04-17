@@ -473,4 +473,28 @@ class Ejercicio
     {
         return $this->ruta;
     }
+
+    /**
+     * Set beneficios
+     *
+     * @param string $beneficios
+     *
+     * @return Ejercicio
+     */
+    public function setBeneficios($beneficios)
+    {
+        $this->beneficios = $beneficios;
+
+        return $this;
+    }
+
+    /**
+     * Get beneficios
+     *
+     * @return string
+     */
+    public function getBeneficios()
+    {
+        return $this->beneficios;
+    }
 }

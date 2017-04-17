@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
 * @ORM\Entity
 */
-class TipoEjercicios
+class Novedad
 {
 	/** 
 	 * @ORM\Id
@@ -15,18 +15,18 @@ class TipoEjercicios
 	 */
 	protected $id; 
 
-	/** @ORM\Column(type="string", length=100) */
-    protected $nombre; 
+	/** @ORM\Column(type="datetime", length=100) */
+    protected $fecha; 
 
     /** @ORM\Column(type="string", length=100) */
-    protected $descripcion;
+    protected $contenido; 
 
     /**
      * Set id
      *
      * @param integer $id
      *
-     * @return TipoEjercicios
+     * @return Novedad
      */
     public function setId($id)
     {
@@ -50,11 +50,11 @@ class TipoEjercicios
      *
      * @param string $fecha
      *
-     * @return TipoEjercicios
+     * @return Novedad
      */
     public function setFecha($fecha)
     {
-        $this->fecha = $fecha;
+        $this->fecha = new \DateTime($fecha);
 
         return $this;
     }
@@ -70,50 +70,26 @@ class TipoEjercicios
     }
 
     /**
-     * Set descripcion
+     * Set contenido
      *
-     * @param string $descripcion
+     * @param string $contenido
      *
-     * @return TipoEjercicios
+     * @return Novedad
      */
-    public function setDescripcion($descripcion)
+    public function setContenido($contenido)
     {
-        $this->descripcion = $descripcion;
+        $this->contenido = $contenido;
 
         return $this;
     }
 
     /**
-     * Get descripcion
+     * Get contenido
      *
      * @return string
      */
-    public function getDescripcion()
+    public function getContenido()
     {
-        return $this->descripcion;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     *
-     * @return TipoEjercicios
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
+        return $this->contenido;
     }
 }
