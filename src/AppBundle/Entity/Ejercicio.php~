@@ -22,6 +22,9 @@ class Ejercicio
     protected $descripcion; 
 
     /** @ORM\Column(type="string", length=100) */
+    protected $beneficios; 
+
+    /** @ORM\Column(type="string", length=100) */
     protected $duracion; 
 
     /** @ORM\Column(type="string", length=100) */

@@ -9,24 +9,24 @@
 <div class="container-fluid">
 	<div id="ejerciciosFisicos" class="col-lg-6">
 		<h2>Ejercicios físicos</h2>
-		{% for ejercicio in ejerciciosCuerpo %}
+		{% for numEjercicio, ejercicio in ejerciciosCuerpo %}
 		    <section class="ejercicio">
 		    	<img  src="http://lorempixel.com/60/60/" width="60" height="60">
 		    	<div class="contenidoEjercicio">
 			    	<div class="progresoEjercicio">
-			    	<label class="titulo">{{ ejercicio.nombre }} <span> - {{ejercicio.tipo.nombre}}</span></label><br>
-			    		<label class="nivelEjercicio nivelEjercicioActivo">1</label>
-			    		<label class="nivelEjercicio">2</label>
-			    		<label class="nivelEjercicio">3</label>
-			    		<label class="nivelEjercicio">4</label>
-			    		<label class="nivelEjercicio">5</label>
-			    		<label class="nivelEjercicio">6</label>
-			    		<label class="nivelEjercicio">7</label>
-			    		<label class="nivelEjercicio">8</label>
-			    		<label class="nivelEjercicio">9</label>
-			    		<label class="nivelEjercicio">10</label><br>
-			    		<div class="barEjercicio">
-			    			<div class="progressEjercicio" style="width: 80.5%;"></div>
+			    		<label class="titulo">{{ ejercicio.nombre }} <span> - {{ejercicio.tipo.nombre}}</span></label><br>
+			    		<div>
+			    			<label class="cantidadTitulo">Realizado:</label> 
+			    			<label class="cantidad">{{ vecesCuerpo[numEjercicio] }} 
+			    			{% if vecesCuerpo[numEjercicio] == 1 %}
+							    vez
+							{% else %}
+								veces
+							{% endif %}</label>
+			    		</div>
+			    		<div>
+			    			<label class="cantidadTitulo">Mejor puntuación:</label> 
+			    			<label class="cantidad">{{ mejoresCuerpo[numEjercicio] }}</label>
 			    		</div>
 			    	</div>
 		    	</div>
@@ -56,24 +56,24 @@
 	</div>
 	<div id="ejerciciosMentales" class="col-lg-6">
 		<h2>Ejercicios mentales</h2>
-		{% for ejercicio in ejerciciosMente %}
+		{% for numEjercicio, ejercicio in ejerciciosMente %}
 		    <section class="ejercicio">
 		    	<img  src="http://lorempixel.com/60/60/" width="60" height="60">
 		    	<div class="contenidoEjercicio">
 			    	<div class="progresoEjercicio">
-			    	<label class="titulo">{{ ejercicio.nombre }} <span> - {{ejercicio.tipo.nombre}}</span></label><br>
-			    		<label class="nivelEjercicio nivelEjercicioActivo">1</label>
-			    		<label class="nivelEjercicio">2</label>
-			    		<label class="nivelEjercicio">3</label>
-			    		<label class="nivelEjercicio">4</label>
-			    		<label class="nivelEjercicio">5</label>
-			    		<label class="nivelEjercicio">6</label>
-			    		<label class="nivelEjercicio">7</label>
-			    		<label class="nivelEjercicio">8</label>
-			    		<label class="nivelEjercicio">9</label>
-			    		<label class="nivelEjercicio">10</label><br>
-			    		<div class="barEjercicio">
-			    			<div class="progressEjercicio" style="width: 80.5%;"></div>
+			    		<label class="titulo">{{ ejercicio.nombre }} <span> - {{ejercicio.tipo.nombre}}</span></label><br>
+			    		<div>
+			    			<label class="cantidadTitulo">Realizado:</label> 
+			    			<label class="cantidad">{{ vecesMente[numEjercicio] }} 
+			    			{% if vecesMente[numEjercicio] == 1 %}
+							    vez
+							{% else %}
+								veces
+							{% endif %}</label>
+			    		</div>
+			    		<div>
+			    			<label class="cantidadTitulo">Mejor puntuación:</label> 
+			    			<label class="cantidad">{{ mejoresMente[numEjercicio] }}</label>
 			    		</div>
 			    	</div>
 		    	</div>

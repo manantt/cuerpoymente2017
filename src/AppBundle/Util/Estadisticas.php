@@ -114,4 +114,27 @@ class Estadisticas
 		$ejercicios = $em->getRepository('AppBundle:Puntuacion')->findBy(array('idUsuario' => $usuario));//todos los ejercicios de un usuario
 		return sizeof($ejercicios);
 	}
+	/**
+	 * Devuelve el número de veces que ha completado el usuario un ejercicio
+	 */
+	public function getNumVeces($em, $usuario, $ejercicio){
+		$ejercicios = $em->getRepository('AppBundle:Puntuacion')->findBy(array('idUsuario' => $usuario, 'idEjercicio' => $ejercicio));
+		return sizeof($ejercicios);
+	}
+	/**
+	 * Devuelve la mejor puntuacion de un usuario en un ejercicio
+	 */
+	public function getMejorPuntuacion($em, $usuario, $ejercicio){
+		$ejercicios = $em->getRepository('AppBundle:Puntuacion')->findBy(array('idUsuario' => $usuario, 'idEjercicio' => $ejercicio));
+		$mejor = 0;
+		foreach ($ejercicios as $ejercicio) {
+			if($ejercicio->getPuntuacion() > $mejor)
+				$mejor = $ejercicio->getPuntuacion();
+		}
+		if($mejor == 0)
+			$mejor  = "no realizado";
+		else if($mejor  == 1)
+			$mejor  = "realizado";
+		return $mejor;
+	}
 } 

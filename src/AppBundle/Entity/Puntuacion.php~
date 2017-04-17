@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \DateTime;
 
 /**
 * @ORM\Entity
@@ -18,6 +19,9 @@ class Puntuacion
 
 	/** @ORM\Column(type="integer", length=20) */
     protected $puntuacion; 
+
+    /** @ORM\Column(type="datetime") */
+    protected $fecha; 
 
 	/** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Ejercicio") */
     protected $idEjercicio;
@@ -119,5 +123,20 @@ class Puntuacion
     public function getIdUsuario()
     {
         return $this->idUsuario;
+    }
+
+    /**
+     * Get fecha
+     *
+     * @return datetime
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    public function __construct()
+    {
+        $this->fecha = new DateTime(); 
     }
 }

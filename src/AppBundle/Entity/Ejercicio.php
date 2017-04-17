@@ -22,6 +22,9 @@ class Ejercicio
     protected $descripcion; 
 
     /** @ORM\Column(type="string", length=100) */
+    protected $beneficios; 
+
+    /** @ORM\Column(type="string", length=100) */
     protected $duracion; 
 
     /** @ORM\Column(type="string", length=100) */
@@ -469,5 +472,29 @@ class Ejercicio
     public function getRuta()
     {
         return $this->ruta;
+    }
+
+    /**
+     * Set beneficios
+     *
+     * @param string $beneficios
+     *
+     * @return Ejercicio
+     */
+    public function setBeneficios($beneficios)
+    {
+        $this->beneficios = $beneficios;
+
+        return $this;
+    }
+
+    /**
+     * Get beneficios
+     *
+     * @return string
+     */
+    public function getBeneficios()
+    {
+        return $this->beneficios;
     }
 }

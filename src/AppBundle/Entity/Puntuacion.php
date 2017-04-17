@@ -139,4 +139,18 @@ class Puntuacion
     {
         $this->fecha = new DateTime(); 
     }
+
+    /**
+     * Set fecha
+     *
+     * @param \DateTime $fecha
+     *
+     * @return Puntuacion
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+
+        return $this;
+    }
 }

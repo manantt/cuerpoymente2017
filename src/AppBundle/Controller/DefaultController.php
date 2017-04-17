@@ -82,11 +82,10 @@ class DefaultController extends Controller
 
     	/* Total */
     	$miPuntuacion = $miEjecucion + $miAtencion + $miMemoria + $miPercepcion + $miRelajacion + 
-    		$miFuerza + $miVelocidad + $miResistencia + $miFlexibilidad + $miCoordinacion;
+    	$miFuerza + $miVelocidad + $miResistencia + $miFlexibilidad + $miCoordinacion;
 
-    	$porcenjajePuntuacion = $top1 > 0 ? ($miPuntuacion * 100 ) / $top1 : 0;
+    	$porcenjajePuntuacion = number_format($top1 > 0 ? ($miPuntuacion * 100 ) / $top1 : 0, 0, '.', ',');
     	$numEjercicios = $this->get('miservicio.estadisticas')->getNumEjercicios($em, $usuarioActual);
-    	 
 
 		return $this->render('portada.html.twig', array(
 				//mentales
@@ -144,16 +143,35 @@ class DefaultController extends Controller
 		if($idEjercicio != ""){
 			return $this->render('ejercicio.html.twig', array(
 			'ejercicio' => $ejercicio,
-			/*'padre' => $padre,*/
 			)
 		);
 		}
 		//lista ejercicios
 		$ejerciciosCuerpo = $em->getRepository('AppBundle:Ejercicio')->findBy(array('seccion' => 1));
 		$ejerciciosMente = $em->getRepository('AppBundle:Ejercicio')->findBy(array('seccion' => 2));
+		$vecesCuerpo = array();
+		foreach ($ejerciciosCuerpo as $ejercicio) {
+			$vecesCuerpo[] = $this->get('miservicio.estadisticas')->getNumVeces($em, $this->getUser(), $ejercicio);
+		}
+		$vecesMente = array();
+		foreach ($ejerciciosMente as $ejercicio) {
+			$vecesMente[] = $this->get('miservicio.estadisticas')->getNumVeces($em, $this->getUser(), $ejercicio);
+		}
+		$mejoresCuerpo = array();
+		foreach ($ejerciciosCuerpo as $ejercicio) {
+			$mejoresCuerpo[] = $this->get('miservicio.estadisticas')->getMejorPuntuacion($em, $this->getUser(), $ejercicio);
+		}
+		$mejoresMente = array();
+		foreach ($ejerciciosMente as $ejercicio) {
+			$mejoresMente[] = $this->get('miservicio.estadisticas')->getMejorPuntuacion($em, $this->getUser(), $ejercicio);
+		}
 		return $this->render('entrenamiento.html.twig', array(
 			'ejerciciosCuerpo' => $ejerciciosCuerpo,
 			'ejerciciosMente' => $ejerciciosMente,
+			'vecesCuerpo' => $vecesCuerpo,
+			'vecesMente' => $vecesMente,
+			'mejoresCuerpo' => $mejoresCuerpo,
+			'mejoresMente' => $mejoresMente,
 			)
 		);
     }
@@ -164,11 +182,4 @@ class DefaultController extends Controller
     {
 		return $this->render('tienda.html.twig');
     }
-	/**
-	* @Route("/logout", name="usuario_logout")
-	*/
-	public function logoutAction()
-	{
-		// el logout lo hace Symfony automáticamente
-	}
 }
