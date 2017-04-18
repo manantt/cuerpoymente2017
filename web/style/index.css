@@ -11,7 +11,8 @@ main #sliderSection { /*slider*/
 }
 #quees img{
 	width: 300px;
-	height: 200px;
+	height: 300px;
+	margin: 10px 0 10px 40px;
 }
 #quees p{
 	font-size: 20px;
@@ -22,7 +23,8 @@ main #sliderSection { /*slider*/
 	text-align: center;
 	margin: auto;
 	cursor: pointer;
-	margin-left: 100px;
+	margin-left: 30px;
+	color:#560357;
 }
 /* SECCION 1 - PERFIL*/
 #perfil{

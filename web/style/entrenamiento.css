@@ -39,7 +39,7 @@
 	display: inline-block;
 	margin: 0;
 	padding:0;
-	width: 200px;
+	width: 225px;
 }
 .progresoEjercicio div{
 	height: 16px;
@@ -57,7 +57,7 @@
 .ejercicio a{
 	font-size: 70px;
 	display: inline-block;
-	margin-left:18px;
+	margin-left:5px;
 	color:#560357;
 	cursor: pointer;
 	position: relative;

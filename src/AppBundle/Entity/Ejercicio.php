@@ -18,10 +18,10 @@ class Ejercicio
 	/** @ORM\Column(type="string", length=100) */
     protected $nombre; 
 
-    /** @ORM\Column(type="string", length=100) */
+    /** @ORM\Column(type="string", length=10000) */
     protected $descripcion; 
 
-    /** @ORM\Column(type="string", length=100) */
+    /** @ORM\Column(type="string", length=10000) */
     protected $beneficios; 
 
     /** @ORM\Column(type="string", length=100) */

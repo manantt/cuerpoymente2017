@@ -1,10 +1,3 @@
-var img = new Image(100,100);
-img.src = "/svg/bacteria.svg";
-var img2 = new Image(50,50);
-img2.src = "/svg/bacteria2.svg";
-var img3 = new Image(76,76);
-img3.src = "/svg/bacteria3.svg";
-
 var mousex = 10;
 var mousey = 10;
 
@@ -76,13 +69,7 @@ function drawRectangle(ctx, x, y, w, h, color) {
 function drawBacteria(ctx, x, y, tam, id, fallo) { 
     x = x - camaraX + tPantallaX/2;
     y = y - camaraY +tPantallaY/2;
-	if(tam == 50){
-		ctx.drawImage(img, x-tam, y-tam);
-	}if(tam == 25){
-		ctx.drawImage(img2, x-tam, y-tam);
-	}if(tam == 38){
-		ctx.drawImage(img3, x-tam, y-tam);
-	}
+
     ctx.lineWidth = tam/10;
 	ctx.fillStyle = 'rgba(220, 220, 220, 0.5)';
 	if(fallo){

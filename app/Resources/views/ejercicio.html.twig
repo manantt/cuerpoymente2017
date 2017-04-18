@@ -79,9 +79,9 @@ window.onload = function() {
 <div class="container-fluid">
 	<div class="col-lg-5">	
 		<h2>Cómo se realiza</h2>
-		<p>{{ ejercicio.descripcion }}</p>
+		<p>{{ ejercicio.descripcion | replace({ '\r\n': '\\r\\n', '\n': '\\n', '\r': '\\r', '<br>': '\n' }) | nl2br }}</p>
 		<h2>Para qué sirve</h2>
-		<p>{{ ejercicio.beneficios }}</p>
+		<p>{{ ejercicio.beneficios | replace({ '\r\n': '\\r\\n', '\n': '\\n', '\r': '\\r', '<br>': '\n' }) | nl2br }}</p>
 		<canvas id="canvasGrafica" width="300" height="300">Su navegador no soporta canvas</canvas>
 	</div>
 	<div class="col-lg-7">	

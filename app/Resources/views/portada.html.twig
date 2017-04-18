@@ -9,24 +9,20 @@
     <div id="slider">
         <div id="contenidoSl">
             <div id="banner1">
-                <br><br>
-                <blockquote>
-                    <p>El verdadero gozo viene de la actividad de la mente y el ejercicio del cuerpo, los dos van unidos.</p>
-                    <small>Frase célebre de <cite title="Nombre Apellidos">Alexander von Humboldt</cite></small>
-                </blockquote>
+                <img src="{{ asset('svg/sl1.png')}}" id="sl2">
             </div>
             <div id="banner2">
-                <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
+                <img src="{{ asset('svg/sl2.png')}}" id="sl2">
             </div>
             <div id="banner3">
+                <img src="{{ asset('svg/sl3.png')}}" id="sl2">
+            </div>
+            <div id="banner4">
                 <br><br>
                 <blockquote>
                     <p>El verdadero gozo viene de la actividad de la mente y el ejercicio del cuerpo, los dos van unidos.</p>
                     <small>Frase célebre de <cite title="Nombre Apellidos">Alexander von Humboldt</cite></small>
                 </blockquote>
-            </div>
-            <div id="banner4">
-                <img src="{{ asset('svg/sl2.svg')}}" id="sl2">
             </div>
         </div>
     </div>
@@ -62,10 +58,10 @@
                 <h1>¿Qué es Cuerpo y Mente?</h1>
                 <p>
                     Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
-                    forma mediante el entrenamiento cerebral, el control del estrés y el ejercicio físico.
+                    forma mediante el entrenamiento cerebral, el control del estrés, la alimentación equilibrada y el ejercicio físico.
                 </p>
-                <img src="http://lorempixel.com/350/170/nature/4/" width="100" height="100">
-                <a href="/register">REGÍSTRATE AHORA</a>
+                <img src="{{ asset('svg/salud.png') }}">
+                <a href="/register">REGÍSTRATE GRATIS AHORA</a>
                 <div class="clear"/><br>
                 <p>Consulta tu gráfica de progreso y mejora de una forma equilibrada tus capacidades físicas y mentales.</p>
             </section>
@@ -155,6 +151,7 @@
             {% endif %}
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-lg-8">
             <section class="">
