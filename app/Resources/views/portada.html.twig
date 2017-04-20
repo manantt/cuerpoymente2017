@@ -69,7 +69,7 @@
             <section id="perfil" class="container-fluid">
                 <div class="col-sm-2">
                     <h1>{{app.user}}</h1>
-                    <img src="http://lorempixel.com/100/100/people/" width="100" height="100">
+                    <img src="{{ asset('svg/avatar.svg') }}" width="100" height="100">
                     <p>Registro: <br><label>29/03/2017</label></p>
                     <p>Entrenamientos: <br><label>{{ numEjercicios }}</label></p>
                     <div class="area-capacidad">
@@ -162,16 +162,16 @@
                         <h2>Programa básico</h2>
                         <p><img src="{{ asset('svg/check.svg')}}" class="icon">Para cualquier usuarios<br><img src="{{ asset('svg/check.svg')}}" class="icon">Mejora tu físico<br><img src="{{ asset('svg/check.svg')}}" class="icon">Gana agilidad mental<br></p>
                     </div>
-                    <img src="http://lorempixel.com/350/170/sports/1" class="imgDer">
+                    <img src="{{ asset('svg/programa1.svg')}}" class="imgDer">
                 </div>
                 <div class="programa">
                     <div class="textDer">
                         <h2>Infantil</h2>
-                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">De 3 a 6 años<br>
+                        <p><img src="{{ asset('svg/check.svg')}}" class="icon">De 3 a 12 años<br>
                         <img src="{{ asset('svg/check.svg')}}" class="icon">Mejora el potencial de los niños<br>
                         <img src="{{ asset('svg/check.svg')}}" class="icon">Fortalece huesos y músculos<br></p>
                     </div>
-                    <img src="http://lorempixel.com/350/170/sports/2" class="imgIzq">
+                    <img src="{{ asset('svg/programa2.svg')}}" class="imgIzq">
                 </div>
                 <div class="programa">
                     <div class="textIzq">
@@ -180,7 +180,7 @@
                         <img src="{{ asset('svg/check.svg')}}" class="icon">30 minutos diarios<br>
                         <img src="{{ asset('svg/check.svg')}}" class="icon">Mejoras notables<br></p>
                     </div>
-                    <img src="http://lorempixel.com/350/170/sports/3" class="imgDer">
+                    <img src="{{ asset('svg/programa3.svg')}}" class="imgDer">
                 </div>
                 <div class="programa">
                     <div class="textDer">
@@ -195,7 +195,7 @@
             <h2>Novedades</h2>
             {% for novedad in novedades %}
                 <section class="novedad">
-                    <img src="http://lorempixel.com/40/40/">
+                    <img src="{{ asset('svg/novedad.png')}}">
                     <h2>{{ novedad.fecha|date('\d F, Y')|replace({
                       'January'  : 'Enero',
                       'February'  : 'Febrero',
