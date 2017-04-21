@@ -27,6 +27,9 @@ html{
 	padding: 0 15px;
 	margin: 5px;
 }
+th, tr{
+	text-align: center !important;
+}
 h1{
 	color: #560357 !important;
 	text-align: center;
