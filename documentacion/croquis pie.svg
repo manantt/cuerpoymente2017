@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="708.66138"
+   height="141.73228"
+   id="svg5479"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="croquis pie.svg"
+   inkscape:export-filename="/home/local/COSMOMEDIA/programador4/Escritorio/croquis cabecera.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs5481">
+    <linearGradient
+       id="linearGradient6104">
+      <stop
+         style="stop-color:#6b95aa;stop-opacity:1;"
+         offset="0"
+         id="stop6106" />
+      <stop
+         style="stop-color:#616e81;stop-opacity:1;"
+         offset="1"
+         id="stop6108" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6026">
+      <stop
+         style="stop-color:#d0b38e;stop-opacity:1;"
+         offset="0"
+         id="stop6028" />
+      <stop
+         style="stop-color:#f7d5a8;stop-opacity:1;"
+         offset="1"
+         id="stop6030" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6026"
+       id="radialGradient6075"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.70558175,0.04188691,-0.04623138,0.77876304,58.862494,10.114182)"
+       cx="189.10876"
+       cy="69.902245"
+       fx="189.10876"
+       fy="69.902245"
+       r="13.39286" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="318.55379"
+     inkscape:cy="83.41839"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer28"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="720"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     units="cm" />
+  <metadata
+     id="metadata5484">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="circulo"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-910.62979)"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer30"
+     inkscape:label="cuello"
+     style="display:inline"
+     transform="translate(0,41.732402)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer31"
+     inkscape:label="borde camiseta"
+     style="display:inline"
+     transform="translate(0,41.732402)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer32"
+     inkscape:label="camiseta"
+     style="display:inline"
+     transform="translate(0,41.732402)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer29"
+     inkscape:label="cara"
+     style="display:inline"
+     transform="translate(0,41.732402)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer28"
+     inkscape:label="pelo"
+     style="display:inline"
+     transform="translate(0,41.732402)">
+    <rect
+       style="fill:#008000;fill-opacity:1;stroke:none"
+       id="rect3879"
+       width="709.28571"
+       height="142.14285"
+       x="-0.71428573"
+       y="0.30371413"
+       transform="translate(0,-41.732402)"
+       ry="0" />
+    <rect
+       style="fill:#d45500;fill-opacity:1;stroke:none"
+       id="rect3853"
+       width="146.1073"
+       height="108.27564"
+       x="51.428577"
+       y="-27.857267"
+       ry="12.680931" />
+    <rect
+       ry="12.680931"
+       y="-26.881811"
+       x="204.11726"
+       height="108.27564"
+       width="146.1073"
+       id="rect3857"
+       style="fill:#d45500;fill-opacity:1;stroke:none" />
+    <rect
+       ry="12.680931"
+       y="-26.394079"
+       x="355.48972"
+       height="108.27564"
+       width="146.1073"
+       id="rect3859"
+       style="fill:#d45500;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:#d45500;fill-opacity:1;stroke:none"
+       id="rect3861"
+       width="146.1073"
+       height="108.27564"
+       x="508.17844"
+       y="-25.418623"
+       ry="12.680931" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="80"
+       y="29.285597"
+       id="text3863"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3865"
+         x="80"
+         y="29.285597">contacto</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3867"
+       y="28.571312"
+       x="232.85715"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="28.571312"
+         x="232.85715"
+         id="tspan3869"
+         sodipodi:role="line">empresa</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="382.85715"
+       y="28.571312"
+       id="text3871"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3873"
+         x="382.85715"
+         y="28.571312">servicios</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3875"
+       y="29.285599"
+       x="548.57141"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="29.285599"
+         x="548.57141"
+         id="tspan3877"
+         sodipodi:role="line">licencia</tspan></text>
+  </g>
+</svg>

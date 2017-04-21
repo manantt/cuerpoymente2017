@@ -56,14 +56,55 @@
             {% if app.user == "" %} 
             <section id="quees">
                 <h1>¿Qué es Cuerpo y Mente?</h1>
-                <p>
-                    Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
-                    forma mediante el entrenamiento cerebral, el control del estrés, la alimentación equilibrada y el ejercicio físico.
-                </p>
-                <img src="{{ asset('svg/salud.png') }}">
-                <a href="/register">REGÍSTRATE GRATIS AHORA</a>
-                <div class="clear"/><br>
-                <p>Consulta tu gráfica de progreso y mejora de una forma equilibrada tus capacidades físicas y mentales.</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Equipo especializado en maximizar tu salud</h4>
+                        <p>
+                            Cuerpo y Mente es la plataforma web que te ayuda a poner tu cuerpo y tu cerebro en
+                            forma mediante el entrenamiento cerebral, el control del estrés, la alimentación equilibrada y el ejercicio físico.
+                        </p>
+                        <img id="imgquees" src="{{ asset('svg/ejercicio.svg') }}">
+                        <!--<a href="/register">REGÍSTRATE AHORA</a>     -->                   
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="col-lg-2">
+                            <img class="ico" src="{{ asset('svg/icoalim.svg') }}">
+                        </div>
+                        <div class="col-lg-10">
+                            <h4>Alimentación</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut.</p>
+                            <hr>
+                        </div>
+                        <div class="col-lg-2">
+                            <img class="ico" src="{{ asset('svg/icofis.svg') }}">
+                        </div>
+                        <div class="col-lg-10">
+                            <h4>Entrenamiento físico</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor.</p>
+                            <hr>
+                        </div>
+                        <div class="col-lg-2">
+                            <img class="ico" src="{{ asset('svg/icomen.svg') }}">
+                        </div>
+                        <div class="col-lg-10">
+                            <h4>Entrenamiento mental</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et.</p>
+                            <hr>
+                        </div>
+                        <div class="col-lg-2">
+                            <img class="ico" src="{{ asset('svg/icoest.svg') }}">
+                        </div>
+                        <div class="col-lg-10">
+                            <h4>Control del estrés</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor.</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
             </section>
             {% else %}
             <section id="perfil" class="container-fluid">

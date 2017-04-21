@@ -19,7 +19,7 @@ html{
     clear:both;
 }
 .contenedor{
-	background-color:#f2f2f2;
+	background-color:#dedede;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -41,7 +41,7 @@ h2{
 }
 /***/
 body{
-	background-color: #dedede !important;
+	background-color: #f2f2f2 !important;
 	margin:0;
 	margin-bottom: 100px !important;
 	box-sizing: border-box;

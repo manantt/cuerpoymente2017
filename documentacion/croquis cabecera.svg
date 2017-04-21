@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="708.66138"
+   height="177.16534"
+   id="svg5479"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="croquis cabecera.svg">
+  <defs
+     id="defs5481">
+    <linearGradient
+       id="linearGradient6104">
+      <stop
+         style="stop-color:#6b95aa;stop-opacity:1;"
+         offset="0"
+         id="stop6106" />
+      <stop
+         style="stop-color:#616e81;stop-opacity:1;"
+         offset="1"
+         id="stop6108" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6026">
+      <stop
+         style="stop-color:#d0b38e;stop-opacity:1;"
+         offset="0"
+         id="stop6028" />
+      <stop
+         style="stop-color:#f7d5a8;stop-opacity:1;"
+         offset="1"
+         id="stop6030" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6026"
+       id="radialGradient6075"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.70558175,0.04188691,-0.04623138,0.77876304,58.862494,10.114182)"
+       cx="189.10876"
+       cy="69.902245"
+       fx="189.10876"
+       fy="69.902245"
+       r="13.39286" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6026"
+       id="radialGradient6100"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.81971258,0.0153978,-0.01599841,0.8494851,-103.9892,6.4201083)"
+       cx="188.48051"
+       cy="68.222534"
+       fx="188.48051"
+       fy="68.222534"
+       r="13.39286" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6104"
+       id="radialGradient6110"
+       cx="47.857155"
+       cy="50.899033"
+       fx="47.857155"
+       fy="50.899033"
+       r="50"
+       gradientTransform="matrix(1.5720107,0.00267595,-0.00202307,1.188464,-27.271831,-10.823403)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="318.55379"
+     inkscape:cy="83.41839"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer28"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="720"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     units="cm" />
+  <metadata
+     id="metadata5484">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="circulo"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-875.19673)"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer30"
+     inkscape:label="cuello"
+     style="display:inline"
+     transform="translate(0,77.165466)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer31"
+     inkscape:label="borde camiseta"
+     style="display:inline"
+     transform="translate(0,77.165466)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer32"
+     inkscape:label="camiseta"
+     style="display:inline"
+     transform="translate(0,77.165466)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer29"
+     inkscape:label="cara"
+     style="display:inline"
+     transform="translate(0,77.165466)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer28"
+     inkscape:label="pelo"
+     style="display:inline"
+     transform="translate(0,77.165466)">
+    <rect
+       style="fill:#008000;fill-opacity:1;stroke:none"
+       id="rect3808"
+       width="456.42856"
+       height="125.71429"
+       x="0.71428573"
+       y="25.736774"
+       transform="translate(0,-77.165466)" />
+    <g
+       id="g3795">
+      <rect
+         ry="0"
+         y="-77.142975"
+         x="0"
+         height="25"
+         width="708.57141"
+         id="rect3021"
+         style="fill:#007bff;fill-opacity:1;stroke:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3791"
+         y="-59.285835"
+         x="277.14285"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="-59.285835"
+           x="277.14285"
+           id="tspan3793"
+           sodipodi:role="line">menú secundario</tspan></text>
+    </g>
+    <g
+       id="g3800"
+       transform="translate(0,152.14285)">
+      <rect
+         style="fill:#007bff;fill-opacity:1;stroke:none"
+         id="rect3802"
+         width="708.57141"
+         height="25"
+         x="0"
+         y="-77.142975"
+         ry="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="277.14285"
+         y="-59.285835"
+         id="text3804"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3806"
+           x="277.14285"
+           y="-59.285835">menú principal</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="324.28574"
+       y="60.714161"
+       id="text3814"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3816"
+         x="324.28574"
+         y="60.714161">eslogan</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:#ff2a2a;fill-opacity:1;stroke:none"
+       id="path3818"
+       sodipodi:cx="226.78571"
+       sodipodi:cy="88.236771"
+       sodipodi:rx="60.357143"
+       sodipodi:ry="56.785717"
+       d="m 287.14285,88.236771 a 60.357143,56.785717 0 1 1 -120.71429,0 60.357143,56.785717 0 1 1 120.71429,0 z"
+       transform="translate(0,-77.165466)" />
+    <text
+       xml:space="preserve"
+       style="font-size:50px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="42.85714"
+       y="39.999878"
+       id="text3810"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3812"
+         x="42.85714"
+         y="39.999878"
+         style="font-size:50px;font-weight:bold;letter-spacing:10px;-inkscape-font-specification:Sans Bold">Logotipo</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:15px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="228.31334"
+       y="-22.857265"
+       id="text3820"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3822"
+         x="228.31334"
+         y="-22.857265">modelo</tspan><tspan
+         sodipodi:role="line"
+         x="228.31334"
+         y="-4.1072645"
+         id="tspan3824">3D</tspan></text>
+    <rect
+       style="fill:#d45500;fill-opacity:1;stroke:none"
+       id="rect3826"
+       width="250"
+       height="124.28571"
+       x="458.57141"
+       y="26.451059"
+       transform="translate(0,-77.165466)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="588.98438"
+       y="-1.4286953"
+       id="text3828"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3830"
+         x="588.98438"
+         y="-1.4286953">Formulario</tspan><tspan
+         sodipodi:role="line"
+         x="588.98438"
+         y="48.571304"
+         id="tspan3832">login</tspan></text>
+  </g>
+</svg>
