@@ -145,7 +145,7 @@ function init() {
     //
     geometry.computeBoundingSphere();
 
-    var material = new THREE.MeshBasicMaterial ( { color: 0xc994dE, wireframe: false, overdraw: 0.5, transparent:true, opacity:0.8 } );
+    var material = new THREE.MeshBasicMaterial ( { color: 0xc1ade5, wireframe: false, overdraw: 0.5, transparent:true, opacity:0.8 } );
     material.opacity = 0.4;
     
     corazon = new THREE.Mesh( geometry, material );
